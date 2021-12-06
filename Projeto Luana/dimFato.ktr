@@ -430,7 +430,7 @@
     <created_date>2021/10/25 22:36:13.202</created_date>
     <modified_user>-</modified_user>
     <modified_date>2021/10/25 22:36:13.202</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -564,18 +564,18 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>chave_dim_ocorrencia_aeronave</from>
-      <to>chave_dim_localidade</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>chave_dim_localidade</from>
-      <to>chave_dim_especie</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>chave_dim_especie</from>
       <to>rename_to_sk_pk</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>chave_dim_ocorrencia_aeronave</from>
+      <to>dim_localidadee</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>dim_localidadee</from>
+      <to>chave_dim_especie</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -772,9 +772,9 @@
     </GUI>
   </step>
   <step>
-    <name>dim_junk_ocorrencia_aeronave</name>
-    <type>CombinationLookup</type>
-    <description>stage para criar a chave i_junk_fale_conosco_sk</description>
+    <name>chave_dim_especie</name>
+    <type>DimensionLookup</type>
+    <description>step para criar a chave i_dim_contribuinte_fale_conosco_sk</description>
     <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
@@ -783,51 +783,42 @@
       <schema_name/>
     </partitioning>
     <schema>public</schema>
-    <table>dim_junk_aeronave_ocorrencia</table>
+    <table>dim_especie</table>
     <connection>dw</connection>
-    <commit>1000</commit>
-    <cache_size>9999</cache_size>
-    <replace>Y</replace>
-    <preloadCache>N</preloadCache>
-    <crc>N</crc>
-    <crcfield>hashcode</crcfield>
+    <commit>100</commit>
+    <update>Y</update>
     <fields>
       <key>
-        <name>ocorrencia_classificacao</name>
-        <lookup>ocorrencia_classificacao</lookup>
+        <name>codigoreporteespecies</name>
+        <lookup>codigoreporteespecies</lookup>
       </key>
-      <key>
-        <name>ocorrencia_tipo</name>
-        <lookup>ocorrencia_tipo</lookup>
-      </key>
-      <key>
-        <name>ocorrencia_tipo_categoria</name>
-        <lookup>ocorrencia_tipo_categoria</lookup>
-      </key>
-      <key>
-        <name>taxonomia_tipo_icao</name>
-        <lookup>taxonomia_tipo_icao</lookup>
-      </key>
-      <key>
-        <name>classificacao_ocorrencia</name>
-        <lookup>classificacao_ocorrencia</lookup>
-      </key>
-      <key>
-        <name>tipo_reporte</name>
-        <lookup>tipo_reporte</lookup>
-      </key>
-      <key>
-        <name>aviaco_tipo</name>
-        <lookup>aviaco_tipo</lookup>
-      </key>
+      <date>
+        <name/>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <field>
+        <name>especie</name>
+        <lookup>especie</lookup>
+        <update>Insert</update>
+      </field>
       <return>
-        <name>i_junk_aeronave_ocorrencia_sk</name>
+        <name>i_dim_especie_sk</name>
+        <rename/>
         <creation_method>tablemax</creation_method>
         <use_autoinc>N</use_autoinc>
+        <version>version</version>
       </return>
     </fields>
     <sequence/>
-    <last_update_field/>
+    <min_year>1900</min_year>
+    <max_year>2199</max_year>
+    <cache_size>5000</cache_size>
+    <preload_cache>N</preload_cache>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <start_date_alternative>none</start_date_alternative>
+    <start_date_field_name/>
+    <useBatch>N</useBatch>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -837,7 +828,409 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
+      <xloc>1248</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>chave_dim_ocorrencia_aeronave</name>
+    <type>DimensionLookup</type>
+    <description>step para criar a chave i_dim_contribuinte_fale_conosco_sk</description>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <schema>public</schema>
+    <table>dim_ocorrencia_aeronave</table>
+    <connection>dw</connection>
+    <commit>100</commit>
+    <update>Y</update>
+    <fields>
+      <key>
+        <name>codigo_ocorrencia1</name>
+        <lookup>codigo_ocorrencia1</lookup>
+      </key>
+      <date>
+        <name/>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <field>
+        <name>investigacao_aeronave_liberada</name>
+        <lookup>investigacao_aeronave_liberada</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>investigacao_status</name>
+        <lookup>investigacao_status</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>divulgacao_relatorio_numero</name>
+        <lookup>divulgacao_relatorio_numero</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>divulgacao_relatorio_publicado</name>
+        <lookup>divulgacao_relatorio_publicado</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>ocorrencia_saida_pista</name>
+        <lookup>ocorrencia_saida_pista</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>recomendacao_numero</name>
+        <lookup>recomendacao_numero</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>recomendacao_dia_assinatura</name>
+        <lookup>recomendacao_dia_assinatura</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>recomendacao_dia_encaminhamento</name>
+        <lookup>recomendacao_dia_encaminhamento</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>recomendacao_dia_feedback</name>
+        <lookup>recomendacao_dia_feedback</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>recomendacao_conteudo</name>
+        <lookup>recomendacao_conteudo</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>recomendacao_status</name>
+        <lookup>recomendacao_status</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>recomendacao_destinatario_sigla</name>
+        <lookup>recomendacao_destinatario_sigla</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>recomendacao_destinatario</name>
+        <lookup>recomendacao_destinatario</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>status</name>
+        <lookup>status</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>operador</name>
+        <lookup>operador</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>periodo_dia</name>
+        <lookup>periodo_dia</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>icao</name>
+        <lookup>icao</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>pista</name>
+        <lookup>pista</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>lado</name>
+        <lookup>lado</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>asa</name>
+        <lookup>asa</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>coordenada_radial</name>
+        <lookup>coordenada_radial</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>altura</name>
+        <lookup>altura</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>velocidade</name>
+        <lookup>velocidade</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>fase_voo</name>
+        <lookup>fase_voo</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>efeito_voo</name>
+        <lookup>efeito_voo</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>condicao_ceu</name>
+        <lookup>condicao_ceu</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>visibilidade</name>
+        <lookup>visibilidade</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>precipitacao</name>
+        <lookup>precipitacao</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>danos_prejuizo</name>
+        <lookup>danos_prejuizo</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>indisponibilidade_anv</name>
+        <lookup>indisponibilidade_anv</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>piloto_alertado</name>
+        <lookup>piloto_alertado</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>atingida1</name>
+        <lookup>atingida1</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>atingida2</name>
+        <lookup>atingida2</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>atingida3</name>
+        <lookup>atingida3</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>atingida4</name>
+        <lookup>atingida4</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>atingida5</name>
+        <lookup>atingida5</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>atingida6</name>
+        <lookup>atingida6</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>atingida7</name>
+        <lookup>atingida7</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>atingida8</name>
+        <lookup>atingida8</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>atingida9</name>
+        <lookup>atingida9</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>atingida10</name>
+        <lookup>atingida10</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>atingida11</name>
+        <lookup>atingida11</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>danificado1</name>
+        <lookup>danificado1</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>danificado2</name>
+        <lookup>danificado2</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>danificado3</name>
+        <lookup>danificado3</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>danificado4</name>
+        <lookup>danificado4</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>danificado5</name>
+        <lookup>danificado5</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>danificado6</name>
+        <lookup>danificado6</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>danificado7</name>
+        <lookup>danificado7</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>danificado8</name>
+        <lookup>danificado8</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>danificado9</name>
+        <lookup>danificado9</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>danificado10</name>
+        <lookup>danificado10</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>danificado11</name>
+        <lookup>danificado11</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>outrafasevoo</name>
+        <lookup>outrafasevoo</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>ingestao_motor</name>
+        <lookup>ingestao_motor</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>ingestao_multipla</name>
+        <lookup>ingestao_multipla</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>parte_da_aeronave</name>
+        <lookup>parte_da_aeronave</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>outraanvparte</name>
+        <lookup>outraanvparte</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>coletada</name>
+        <lookup>coletada</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>fotografada</name>
+        <lookup>fotografada</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>enviada</name>
+        <lookup>enviada</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>amostra</name>
+        <lookup>amostra</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>avistada</name>
+        <lookup>avistada</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>atingida</name>
+        <lookup>atingida</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>tamanho_sugerido</name>
+        <lookup>tamanho_sugerido</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>fator_nome</name>
+        <lookup>fator_nome</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>fator_aspecto</name>
+        <lookup>fator_aspecto</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>fator_condicionante</name>
+        <lookup>fator_condicionante</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>fator_area</name>
+        <lookup>fator_area</lookup>
+        <update>Insert</update>
+      </field>
+      <return>
+        <name>i_dim_ocorrencia_aeronave_sk</name>
+        <rename/>
+        <creation_method>tablemax</creation_method>
+        <use_autoinc>N</use_autoinc>
+        <version>version</version>
+      </return>
+    </fields>
+    <sequence/>
+    <min_year>1900</min_year>
+    <max_year>2199</max_year>
+    <cache_size>5000</cache_size>
+    <preload_cache>N</preload_cache>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <start_date_alternative>none</start_date_alternative>
+    <start_date_field_name/>
+    <useBatch>N</useBatch>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>848</xloc>
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
@@ -943,6 +1336,77 @@
     </GUI>
   </step>
   <step>
+    <name>dim_junk_ocorrencia_aeronave</name>
+    <type>CombinationLookup</type>
+    <description>stage para criar a chave i_junk_fale_conosco_sk</description>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <schema>public</schema>
+    <table>dim_junk_aeronave_ocorrencia</table>
+    <connection>dw</connection>
+    <commit>1000</commit>
+    <cache_size>9999</cache_size>
+    <replace>Y</replace>
+    <preloadCache>N</preloadCache>
+    <crc>N</crc>
+    <crcfield>hashcode</crcfield>
+    <fields>
+      <key>
+        <name>ocorrencia_classificacao</name>
+        <lookup>ocorrencia_classificacao</lookup>
+      </key>
+      <key>
+        <name>ocorrencia_tipo</name>
+        <lookup>ocorrencia_tipo</lookup>
+      </key>
+      <key>
+        <name>ocorrencia_tipo_categoria</name>
+        <lookup>ocorrencia_tipo_categoria</lookup>
+      </key>
+      <key>
+        <name>taxonomia_tipo_icao</name>
+        <lookup>taxonomia_tipo_icao</lookup>
+      </key>
+      <key>
+        <name>classificacao_ocorrencia</name>
+        <lookup>classificacao_ocorrencia</lookup>
+      </key>
+      <key>
+        <name>tipo_reporte</name>
+        <lookup>tipo_reporte</lookup>
+      </key>
+      <key>
+        <name>aviaco_tipo</name>
+        <lookup>aviaco_tipo</lookup>
+      </key>
+      <return>
+        <name>i_junk_aeronave_ocorrencia_sk</name>
+        <creation_method>tablemax</creation_method>
+        <use_autoinc>N</use_autoinc>
+      </return>
+    </fields>
+    <sequence/>
+    <last_update_field/>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>rename_to_sk_pk</name>
     <type>SelectValues</type>
     <description>step para renomear s_numero_protocolo para s_id_pk, i_hora para i_time_sk e i_data para i_data_fale_conosco_sk</description>
@@ -968,47 +1432,36 @@
       </field>
       <field>
         <name>i_data_publicacao</name>
-        <rename/>
       </field>
       <field>
         <name>i_total_recomendacoes</name>
-        <rename/>
       </field>
       <field>
         <name>i_total_aeronaves_envolvidas</name>
-        <rename/>
       </field>
       <field>
         <name>i_aeronave_assentos</name>
-        <rename/>
       </field>
       <field>
         <name>i_data_reporte</name>
-        <rename/>
       </field>
       <field>
         <name>i_hora_reporte</name>
-        <rename/>
       </field>
       <field>
         <name>i_junk_aeronave_ocorrencia_sk</name>
-        <rename/>
       </field>
       <field>
         <name>i_dim_aeronave_sk</name>
-        <rename/>
       </field>
       <field>
         <name>i_dim_ocorrencia_aeronave_sk</name>
-        <rename/>
       </field>
       <field>
         <name>i_dim_localidade_sk</name>
-        <rename/>
       </field>
       <field>
         <name>i_dim_especie_sk</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -9197,411 +9650,9 @@ FROM "public".stagemergeocorraer
     </GUI>
   </step>
   <step>
-    <name>chave_dim_ocorrencia_aeronave</name>
-    <type>DimensionLookup</type>
-    <description>step para criar a chave i_dim_contribuinte_fale_conosco_sk</description>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <schema>public</schema>
-    <table>dim_ocorrencia_aeronave</table>
-    <connection>dw</connection>
-    <commit>100</commit>
-    <update>Y</update>
-    <fields>
-      <key>
-        <name>codigo_ocorrencia1</name>
-        <lookup>codigo_ocorrencia1</lookup>
-      </key>
-      <date>
-        <name/>
-        <from>date_from</from>
-        <to>date_to</to>
-      </date>
-      <field>
-        <name>investigacao_aeronave_liberada</name>
-        <lookup>investigacao_aeronave_liberada</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>investigacao_status</name>
-        <lookup>investigacao_status</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>divulgacao_relatorio_numero</name>
-        <lookup>divulgacao_relatorio_numero</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>divulgacao_relatorio_publicado</name>
-        <lookup>divulgacao_relatorio_publicado</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>ocorrencia_saida_pista</name>
-        <lookup>ocorrencia_saida_pista</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>recomendacao_numero</name>
-        <lookup>recomendacao_numero</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>recomendacao_dia_assinatura</name>
-        <lookup>recomendacao_dia_assinatura</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>recomendacao_dia_encaminhamento</name>
-        <lookup>recomendacao_dia_encaminhamento</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>recomendacao_dia_feedback</name>
-        <lookup>recomendacao_dia_feedback</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>recomendacao_conteudo</name>
-        <lookup>recomendacao_conteudo</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>recomendacao_status</name>
-        <lookup>recomendacao_status</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>recomendacao_destinatario_sigla</name>
-        <lookup>recomendacao_destinatario_sigla</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>recomendacao_destinatario</name>
-        <lookup>recomendacao_destinatario</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>status</name>
-        <lookup>status</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>operador</name>
-        <lookup>operador</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>periodo_dia</name>
-        <lookup>periodo_dia</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>icao</name>
-        <lookup>icao</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>pista</name>
-        <lookup>pista</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>lado</name>
-        <lookup>lado</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>asa</name>
-        <lookup>asa</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>coordenada_radial</name>
-        <lookup>coordenada_radial</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>altura</name>
-        <lookup>altura</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>velocidade</name>
-        <lookup>velocidade</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>fase_voo</name>
-        <lookup>fase_voo</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>efeito_voo</name>
-        <lookup>efeito_voo</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>condicao_ceu</name>
-        <lookup>condicao_ceu</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>visibilidade</name>
-        <lookup>visibilidade</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>precipitacao</name>
-        <lookup>precipitacao</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>danos_prejuizo</name>
-        <lookup>danos_prejuizo</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>indisponibilidade_anv</name>
-        <lookup>indisponibilidade_anv</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>piloto_alertado</name>
-        <lookup>piloto_alertado</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>atingida1</name>
-        <lookup>atingida1</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>atingida2</name>
-        <lookup>atingida2</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>atingida3</name>
-        <lookup>atingida3</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>atingida4</name>
-        <lookup>atingida4</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>atingida5</name>
-        <lookup>atingida5</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>atingida6</name>
-        <lookup>atingida6</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>atingida7</name>
-        <lookup>atingida7</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>atingida8</name>
-        <lookup>atingida8</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>atingida9</name>
-        <lookup>atingida9</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>atingida10</name>
-        <lookup>atingida10</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>atingida11</name>
-        <lookup>atingida11</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>danificado1</name>
-        <lookup>danificado1</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>danificado2</name>
-        <lookup>danificado2</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>danificado3</name>
-        <lookup>danificado3</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>danificado4</name>
-        <lookup>danificado4</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>danificado5</name>
-        <lookup>danificado5</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>danificado6</name>
-        <lookup>danificado6</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>danificado7</name>
-        <lookup>danificado7</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>danificado8</name>
-        <lookup>danificado8</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>danificado9</name>
-        <lookup>danificado9</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>danificado10</name>
-        <lookup>danificado10</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>danificado11</name>
-        <lookup>danificado11</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>outrafasevoo</name>
-        <lookup>outrafasevoo</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>ingestao_motor</name>
-        <lookup>ingestao_motor</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>ingestao_multipla</name>
-        <lookup>ingestao_multipla</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>parte_da_aeronave</name>
-        <lookup>parte_da_aeronave</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>outraanvparte</name>
-        <lookup>outraanvparte</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>coletada</name>
-        <lookup>coletada</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>fotografada</name>
-        <lookup>fotografada</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>enviada</name>
-        <lookup>enviada</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>amostra</name>
-        <lookup>amostra</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>avistada</name>
-        <lookup>avistada</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>atingida</name>
-        <lookup>atingida</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>tamanho_sugerido</name>
-        <lookup>tamanho_sugerido</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>fator_nome</name>
-        <lookup>fator_nome</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>fator_aspecto</name>
-        <lookup>fator_aspecto</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>fator_condicionante</name>
-        <lookup>fator_condicionante</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
-        <name>fator_area</name>
-        <lookup>fator_area</lookup>
-        <update>Insert</update>
-      </field>
-      <return>
-        <name>i_dim_ocorrencia_aeronave_sk</name>
-        <rename/>
-        <creation_method>tablemax</creation_method>
-        <use_autoinc>N</use_autoinc>
-        <version>version</version>
-      </return>
-    </fields>
-    <sequence/>
-    <min_year>1900</min_year>
-    <max_year>2199</max_year>
-    <cache_size>5000</cache_size>
-    <preload_cache>N</preload_cache>
-    <use_start_date_alternative>N</use_start_date_alternative>
-    <start_date_alternative>none</start_date_alternative>
-    <start_date_field_name/>
-    <useBatch>N</useBatch>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>848</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>chave_dim_localidade</name>
-    <type>DimensionLookup</type>
-    <description>step para criar a chave i_dim_contribuinte_fale_conosco_sk</description>
+    <name>dim_localidadee</name>
+    <type>CombinationLookup</type>
+    <description>stage para criar a chave i_junk_fale_conosco_sk</description>
     <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
@@ -9612,65 +9663,45 @@ FROM "public".stagemergeocorraer
     <schema>public</schema>
     <table>dim_localidade</table>
     <connection>dw</connection>
-    <commit>100</commit>
-    <update>Y</update>
+    <commit>1000</commit>
+    <cache_size>9999</cache_size>
+    <replace>Y</replace>
+    <preloadCache>N</preloadCache>
+    <crc>N</crc>
+    <crcfield>hashcode</crcfield>
     <fields>
       <key>
-        <name>codigo_reporte</name>
-        <lookup>codigo_reporte</lookup>
-      </key>
-      <date>
-        <name/>
-        <from>date_from</from>
-        <to>date_to</to>
-      </date>
-      <field>
         <name>ocorrencia_latitude</name>
         <lookup>ocorrencia_latitude</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
+      </key>
+      <key>
         <name>ocorrencia_longitude</name>
         <lookup>ocorrencia_longitude</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
+      </key>
+      <key>
         <name>ocorrencia_cidade</name>
         <lookup>ocorrencia_cidade</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
+      </key>
+      <key>
         <name>ocorrencia_uf</name>
         <lookup>ocorrencia_uf</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
+      </key>
+      <key>
         <name>ocorrencia_pais</name>
         <lookup>ocorrencia_pais</lookup>
-        <update>Insert</update>
-      </field>
-      <field>
+      </key>
+      <key>
         <name>ocorrencia_aerodromo</name>
         <lookup>ocorrencia_aerodromo</lookup>
-        <update>Insert</update>
-      </field>
+      </key>
       <return>
         <name>i_dim_localidade_sk</name>
-        <rename/>
         <creation_method>tablemax</creation_method>
         <use_autoinc>N</use_autoinc>
-        <version>version</version>
       </return>
     </fields>
     <sequence/>
-    <min_year>1900</min_year>
-    <max_year>2199</max_year>
-    <cache_size>5000</cache_size>
-    <preload_cache>N</preload_cache>
-    <use_start_date_alternative>N</use_start_date_alternative>
-    <start_date_alternative>none</start_date_alternative>
-    <start_date_field_name/>
-    <useBatch>N</useBatch>
+    <last_update_field/>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -9680,69 +9711,7 @@ FROM "public".stagemergeocorraer
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1056</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>chave_dim_especie</name>
-    <type>DimensionLookup</type>
-    <description>step para criar a chave i_dim_contribuinte_fale_conosco_sk</description>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <schema>public</schema>
-    <table>dim_especie</table>
-    <connection>dw</connection>
-    <commit>100</commit>
-    <update>Y</update>
-    <fields>
-      <key>
-        <name>codigoreporteespecies</name>
-        <lookup>codigoreporteespecies</lookup>
-      </key>
-      <date>
-        <name/>
-        <from>date_from</from>
-        <to>date_to</to>
-      </date>
-      <field>
-        <name>especie</name>
-        <lookup>especie</lookup>
-        <update>Insert</update>
-      </field>
-      <return>
-        <name>i_dim_especie_sk</name>
-        <rename/>
-        <creation_method>tablemax</creation_method>
-        <use_autoinc>N</use_autoinc>
-        <version>version</version>
-      </return>
-    </fields>
-    <sequence/>
-    <min_year>1900</min_year>
-    <max_year>2199</max_year>
-    <cache_size>5000</cache_size>
-    <preload_cache>N</preload_cache>
-    <use_start_date_alternative>N</use_start_date_alternative>
-    <start_date_alternative>none</start_date_alternative>
-    <start_date_field_name/>
-    <useBatch>N</useBatch>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1248</xloc>
+      <xloc>1072</xloc>
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>

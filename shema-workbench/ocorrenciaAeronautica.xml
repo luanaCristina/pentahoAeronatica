@@ -1,0 +1,14 @@
+<Schema name="New Schema2">
+  <Cube name="Ocorr&#234;ncia Aeron&#225;utica" visible="true" cache="true" enabled="true">
+    <Table name="fato_ocorrencia" schema="" alias="">
+    </Table>
+    <Dimension type="TimeDimension" visible="true" foreignKey="date_sk" name="Data">
+      <Hierarchy name="New Hierarchy 0" visible="true" hasAll="true">
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" foreignKey="id_time_sk" name="Time">
+      <Hierarchy name="New Hierarchy 0" visible="true" hasAll="true">
+      </Hierarchy>
+    </Dimension>
+  </Cube>
+</Schema>
