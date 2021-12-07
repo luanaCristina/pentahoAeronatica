@@ -1,6 +1,0 @@
-<Schema name="New Schema1">
-  <Cube name="Aueron&#225;utica" visible="true" cache="true" enabled="true">
-    <Table name="fato_ocorrencia" schema="" alias="">
-    </Table>
-  </Cube>
-</Schema>

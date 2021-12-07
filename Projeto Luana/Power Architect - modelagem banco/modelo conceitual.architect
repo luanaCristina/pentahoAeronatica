@@ -1,0 +1,1512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.9">
+ <project-name>modelo conceitual</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="PlayPen Database" />
+  </data-source>
+  <data-source id="DS2">
+   <property key="Connection Type" value="postgres" />
+   <property key="Logical" value="DW" />
+   <property key="JDBC URL" value="jdbc:postgresql://localhost:5433/dw" />
+   <property key="UID" value="postgres" />
+   <property key="PWD" value="3590" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+  <database id="DB0" populated="true" UUID="e2ca60f6-a302-434c-8af7-69d55aefb13d" dbcs-ref="DS2" name="DW" physicalName="DW" >
+   <catalog id="CAT1" populated="true" UUID="a1ebc3d1-c5f1-4c32-902b-9ab5428d273e" name="dw" nativeTerm="database" physicalName="dw" >
+    <schema id="SCH2" populated="false" UUID="a6e9fadd-f980-45c2-945f-44bba442897f" name="information_schema" nativeTerm="schema" physicalName="information_schema" >
+    </schema>
+    <schema id="SCH3" populated="false" UUID="4e5a25d2-cea2-44b2-afcf-68dcc6a992c0" name="pg_catalog" nativeTerm="schema" physicalName="pg_catalog" >
+    </schema>
+    <schema id="SCH4" populated="true" UUID="4f432687-bd4c-49b8-9117-855ad20e3748" name="public" nativeTerm="schema" physicalName="public" >
+     <table id="TAB5" populated="true" UUID="a26dbc67-6a8a-45ae-88c4-d6bb3a0451ca" name="dim_aeronave" objectType="TABLE" physicalName="dim_aeronave" >
+      <remarks></remarks>
+      <folder id="FOLTAB51" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL6" populated="true" UUID="9ce80ea5-323a-4acc-8d7f-80aab31c62ed" autoIncrement="true" defaultValue="nextval(&apos;dim_aeronave_i_dim_aeronave_sk_seq&apos;::regclass)" name="i_dim_aeronave_sk" nullable="0" physicalName="i_dim_aeronave_sk" precision="19" referenceCount="1" scale="0" sourceDataTypeName="bigserial" type="-5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL7" populated="true" UUID="ab9fa560-5054-4546-b39c-4b2c125d442d" autoIncrement="false" name="version" nullable="1" physicalName="version" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL8" populated="true" UUID="d61e20e3-9aaa-4592-b644-dead0720a316" autoIncrement="false" name="date_from" nullable="1" physicalName="date_from" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks></remarks>
+       </column>
+       <column id="COL9" populated="true" UUID="2098a0c6-5d25-4382-b39f-86cfe381c2a3" autoIncrement="false" name="date_to" nullable="1" physicalName="date_to" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks></remarks>
+       </column>
+       <column id="COL10" populated="true" UUID="aa639568-efe8-4ff8-8496-790fe016363f" autoIncrement="false" name="aeronave_matricula" nullable="1" physicalName="aeronave_matricula" precision="35" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL11" populated="true" UUID="fe078998-0bb2-40bf-9e9e-f84f9302208e" autoIncrement="false" name="aeronave_operador_categoria" nullable="1" physicalName="aeronave_operador_categoria" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL12" populated="true" UUID="ef0e94b6-155c-4656-8e03-4a65852f7009" autoIncrement="false" name="aeronave_tipo_veiculo" nullable="1" physicalName="aeronave_tipo_veiculo" precision="35" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL13" populated="true" UUID="71773c80-fe65-4bff-8938-477d705afe2c" autoIncrement="false" name="aeronave_fabricante" nullable="1" physicalName="aeronave_fabricante" precision="59" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL14" populated="true" UUID="73b1e636-9067-44fc-ae95-504ba83a75fc" autoIncrement="false" name="aeronave_modelo" nullable="1" physicalName="aeronave_modelo" precision="45" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL15" populated="true" UUID="8766e280-e5f8-4809-8c35-eeefbf6f5578" autoIncrement="false" name="aeronave_tipo_icao" nullable="1" physicalName="aeronave_tipo_icao" precision="27" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL16" populated="true" UUID="c1922c03-41ed-4268-be8e-bd634d835d20" autoIncrement="false" name="aeronave_motor_tipo" nullable="1" physicalName="aeronave_motor_tipo" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL17" populated="true" UUID="98948ef7-e0c5-411a-8573-5252c79f53a7" autoIncrement="false" name="aeronave_motor_quantidade" nullable="1" physicalName="aeronave_motor_quantidade" precision="19" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL18" populated="true" UUID="c39b092c-9737-442c-875d-24f38472963c" autoIncrement="false" name="aeronave_pmd" nullable="1" physicalName="aeronave_pmd" precision="36" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL19" populated="true" UUID="a8ce2472-14b2-4eb1-9b64-d036e159ca1e" autoIncrement="false" name="aeronave_pmd_categoria" nullable="1" physicalName="aeronave_pmd_categoria" precision="37" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL20" populated="true" UUID="201a2315-60c5-45f7-b78f-e2477f986995" autoIncrement="false" name="aeronave_ano_fabricacao" nullable="1" physicalName="aeronave_ano_fabricacao" precision="4" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL21" populated="true" UUID="1cedff53-2dc6-46f3-9bc5-a6cef184b320" autoIncrement="false" name="aeronave_pais_fabricante" nullable="1" physicalName="aeronave_pais_fabricante" precision="27" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL22" populated="true" UUID="650de3f4-1e8b-4b2c-9322-7f67048aab82" autoIncrement="false" name="aeronave_pais_registro" nullable="1" physicalName="aeronave_pais_registro" precision="26" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL23" populated="true" UUID="2536fd52-79ed-41fc-b71b-26035c66fd28" autoIncrement="false" name="aeronave_registro_categoria" nullable="1" physicalName="aeronave_registro_categoria" precision="36" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL24" populated="true" UUID="8cd343b2-b11c-4350-ab0d-0ccfef71914b" autoIncrement="false" name="aeronave_registro_segmento" nullable="1" physicalName="aeronave_registro_segmento" precision="22" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL25" populated="true" UUID="b2f83516-659c-4a47-8c55-04910d09b38a" autoIncrement="false" name="aeronave_voo_origem" nullable="1" physicalName="aeronave_voo_origem" precision="73" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL26" populated="true" UUID="48647845-572d-4666-a32e-2d4467ffe2e5" autoIncrement="false" name="aeronave_voo_destino" nullable="1" physicalName="aeronave_voo_destino" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL27" populated="true" UUID="e1f1e070-20a2-48cd-a735-4f4e03ab6245" autoIncrement="false" name="aeronave_fase_operacao" nullable="1" physicalName="aeronave_fase_operacao" precision="44" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL28" populated="true" UUID="3363dc63-2132-404f-b42b-12f3cd140916" autoIncrement="false" name="aeronave_tipo_operacao" nullable="1" physicalName="aeronave_tipo_operacao" precision="23" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL29" populated="true" UUID="f4d12bd4-c0bf-4d0f-99a6-95481503898a" autoIncrement="false" name="aeronave_nivel_dano" nullable="1" physicalName="aeronave_nivel_dano" precision="37" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL30" populated="true" UUID="6b9034f7-5d00-4524-927a-ff9184f60531" autoIncrement="false" name="matricula_anv" nullable="1" physicalName="matricula_anv" precision="35" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL31" populated="true" UUID="24cd35b5-62a1-42f7-81c0-a9022aca2ac8" autoIncrement="false" name="fabricante_anv" nullable="1" physicalName="fabricante_anv" precision="34" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL32" populated="true" UUID="e1996c03-52b9-44a6-a629-e73105266cb3" autoIncrement="false" name="modelo_anv" nullable="1" physicalName="modelo_anv" precision="73" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL33" populated="true" UUID="2f594fde-d757-4395-bc76-20c6ab6228f3" autoIncrement="false" name="fabricante_motor" nullable="1" physicalName="fabricante_motor" precision="34" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL34" populated="true" UUID="15b3b3e3-9cc5-49dc-94ec-a3145ab18bb0" autoIncrement="false" name="modelo_motor" nullable="1" physicalName="modelo_motor" precision="34" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL35" populated="true" UUID="7366fc6a-cbb9-494c-80e5-9f0cfb328741" autoIncrement="false" name="numeromotor" nullable="1" physicalName="numeromotor" precision="48" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL36" populated="true" UUID="5c631726-6afc-4a47-8122-afa9905da0d0" autoIncrement="false" name="numerohelice" nullable="1" physicalName="numerohelice" precision="35" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL37" populated="true" UUID="b66ee283-6610-4bee-a6c1-3aeb2c081ca1" autoIncrement="false" name="i_junk_aeronave_ocorrencia_sk" nullable="1" physicalName="i_junk_aeronave_ocorrencia_sk" precision="19" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB53" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB52" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB54" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX38" populated="true" UUID="3a44f430-d91e-47c7-a0b3-a46998608479" clustered="false" name="dim_aeronave_pk" physicalName="dim_aeronave_pk" primaryKeyIndex="true" unique="false" >
+       </index>
+       <index id="IDX39" populated="true" UUID="f33bda71-069e-4cce-9d12-13a38d439d61" clustered="false" name="idx_dim_aeronave_lookup" physicalName="idx_dim_aeronave_lookup" primaryKeyIndex="false" unique="false" >
+        <index-column id="IDC40" populated="true" UUID="385665d2-856a-4d4e-92fe-cc9ef8531f7d" ascendingOrDescending="ASCENDING" column-ref="COL10" name="aeronave_matricula" physicalName="aeronave_matricula" />
+       </index>
+       <index id="IDX41" populated="true" UUID="453b83e7-523f-4abc-9420-70d5f1bff50d" clustered="false" name="idx_dim_aeronave_tk" physicalName="idx_dim_aeronave_tk" primaryKeyIndex="false" unique="false" >
+        <index-column id="IDC42" populated="true" UUID="92a53945-fa97-46c3-a962-fb122bc1e0cc" ascendingOrDescending="ASCENDING" column-ref="COL6" name="i_dim_aeronave_sk" physicalName="i_dim_aeronave_sk" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB43" populated="true" UUID="4410d793-fc31-42a9-a0d7-c0a5f3e42b13" name="dim_data" objectType="TABLE" physicalName="dim_data" >
+      <remarks></remarks>
+      <folder id="FOLTAB431" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL44" populated="true" UUID="fccc46b4-b38d-412c-b8b0-fad2cc73c1f6" autoIncrement="false" name="date_sk" nullable="1" physicalName="date_sk" precision="17" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+        <remarks></remarks>
+       </column>
+       <column id="COL45" populated="true" UUID="f3c828ad-dee4-4bd6-bc47-fd047d4489d8" autoIncrement="false" name="year_number" nullable="1" physicalName="year_number" precision="5" referenceCount="1" scale="0" sourceDataTypeName="int2" type="5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL46" populated="true" UUID="5bd9ad41-0a52-4ea4-914b-5b52e3d8b21a" autoIncrement="false" name="month_number" nullable="1" physicalName="month_number" precision="5" referenceCount="1" scale="0" sourceDataTypeName="int2" type="5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL47" populated="true" UUID="98eee7ec-2cee-4de7-adc0-9706a7d6d0d3" autoIncrement="false" name="day_of_year_number" nullable="1" physicalName="day_of_year_number" precision="5" referenceCount="1" scale="0" sourceDataTypeName="int2" type="5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL48" populated="true" UUID="8265fbc2-70e6-44fd-a7bb-cbb7eb96dd6e" autoIncrement="false" name="day_of_month_number" nullable="1" physicalName="day_of_month_number" precision="5" referenceCount="1" scale="0" sourceDataTypeName="int2" type="5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL49" populated="true" UUID="8338cf4d-27e8-4151-bc1b-2aef8d99be9c" autoIncrement="false" name="day_of_week_number" nullable="1" physicalName="day_of_week_number" precision="5" referenceCount="1" scale="0" sourceDataTypeName="int2" type="5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL50" populated="true" UUID="39845762-5165-46af-81b1-efafc0f0051e" autoIncrement="false" name="week_of_year_number" nullable="1" physicalName="week_of_year_number" precision="5" referenceCount="1" scale="0" sourceDataTypeName="int2" type="5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL51" populated="true" UUID="1bacb4f6-2f73-4e88-919d-ba2076459735" autoIncrement="false" name="day_name" nullable="1" physicalName="day_name" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL52" populated="true" UUID="ae91cf70-57f3-47a3-b1d5-683e09d8e194" autoIncrement="false" name="month_name" nullable="1" physicalName="month_name" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL53" populated="true" UUID="386a1393-be22-4686-9e3a-aed82caee86f" autoIncrement="false" name="quarter_number" nullable="1" physicalName="quarter_number" precision="17" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+        <remarks></remarks>
+       </column>
+       <column id="COL54" populated="true" UUID="ef298250-aa0f-4dde-a044-124ab520c2b1" autoIncrement="false" name="quarter_name" nullable="1" physicalName="quarter_name" precision="2" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL55" populated="true" UUID="9d6e4dca-ae8c-416e-bd40-303b6815b7aa" autoIncrement="false" name="year_quarter_name" nullable="1" physicalName="year_quarter_name" precision="32" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL56" populated="true" UUID="98c8cab6-654b-440d-965a-b9d9f5593092" autoIncrement="false" name="weekend_ind" nullable="1" physicalName="weekend_ind" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL57" populated="true" UUID="53e9839a-c493-497d-ad1f-c065369ac4cf" autoIncrement="false" name="days_in_month_qty" nullable="1" physicalName="days_in_month_qty" precision="5" referenceCount="1" scale="0" sourceDataTypeName="int2" type="5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL58" populated="true" UUID="a6ef3f78-9be3-4511-8344-13249eabbcbf" autoIncrement="false" name="day_desc" nullable="1" physicalName="day_desc" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL59" populated="true" UUID="643c4183-a64d-4992-8a61-f13f1f85fdd7" autoIncrement="false" name="week_sk" nullable="1" physicalName="week_sk" precision="17" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+        <remarks></remarks>
+       </column>
+       <column id="COL60" populated="true" UUID="83737c4e-3fde-464c-9305-13f9a46dd79a" autoIncrement="false" name="day_date" nullable="1" physicalName="day_date" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks></remarks>
+       </column>
+       <column id="COL61" populated="true" UUID="3302ad75-ad18-4b98-a89c-b758a3cafc4a" autoIncrement="false" name="week_name" nullable="1" physicalName="week_name" precision="32" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL62" populated="true" UUID="9d49f03e-5939-41f2-b22f-7679946542db" autoIncrement="false" name="week_of_month_number" nullable="1" physicalName="week_of_month_number" precision="17" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+        <remarks></remarks>
+       </column>
+       <column id="COL63" populated="true" UUID="663a60f0-eb97-4a2e-b101-6bb92cad27f4" autoIncrement="false" name="week_of_month_name" nullable="1" physicalName="week_of_month_name" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL64" populated="true" UUID="620e257b-0ca0-409d-b7e5-fb4961e32f46" autoIncrement="false" name="month_sk" nullable="1" physicalName="month_sk" precision="17" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+        <remarks></remarks>
+       </column>
+       <column id="COL65" populated="true" UUID="ec2bbb22-34cf-4438-a286-7b4b666f0c48" autoIncrement="false" name="quarter_sk" nullable="1" physicalName="quarter_sk" precision="17" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+        <remarks></remarks>
+       </column>
+       <column id="COL66" populated="true" UUID="a7672112-a60b-4973-a47f-2639bc4dc466" autoIncrement="false" name="year_sk" nullable="1" physicalName="year_sk" precision="17" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+        <remarks></remarks>
+       </column>
+       <column id="COL67" populated="true" UUID="bbc387bc-9c52-44d2-9dd1-a24de3f03166" autoIncrement="false" name="year_sort_number" nullable="1" physicalName="year_sort_number" precision="4" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL68" populated="true" UUID="00def489-0f46-4536-b6b2-f0dc5a808365" autoIncrement="false" name="day_of_week_sort_name" nullable="1" physicalName="day_of_week_sort_name" precision="60" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL69" populated="true" UUID="d55b01f9-0299-45c1-8b89-3b541bf7e401" autoIncrement="false" name="aa" nullable="1" physicalName="aa" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL70" populated="true" UUID="1fe6bbac-44ea-431c-9012-0cdee9663cb8" autoIncrement="false" name="mm" nullable="1" physicalName="mm" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL71" populated="true" UUID="430ef862-7c80-43e7-99da-d025f5b2d9e8" autoIncrement="false" name="dd" nullable="1" physicalName="dd" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL72" populated="true" UUID="253dbed4-7260-493c-a593-69885585a0bd" autoIncrement="false" name="aammdd" nullable="1" physicalName="aammdd" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL73" populated="true" UUID="6506f366-6224-4972-ac68-0f4ec360429a" autoIncrement="false" name="mmaa" nullable="1" physicalName="mmaa" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL74" populated="true" UUID="65855862-b7fc-4275-b3a4-ca4d334645e6" autoIncrement="false" name="ddmmaaa" nullable="1" physicalName="ddmmaaa" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL75" populated="true" UUID="9c8320fb-c3d5-4094-9d94-4876b9dac64b" autoIncrement="false" name="competencia" nullable="1" physicalName="competencia" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL76" populated="true" UUID="16a7896a-6c1b-4502-9ac6-08d752760377" autoIncrement="false" name="anostring" nullable="1" physicalName="anostring" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL77" populated="true" UUID="cbf058cc-0f12-493f-b9af-3a7e407dfdec" autoIncrement="false" name="milestone" nullable="1" physicalName="milestone" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL78" populated="true" UUID="bcc3f392-ab65-40da-b0d8-e3b08842724a" autoIncrement="false" name="prescricao" nullable="1" physicalName="prescricao" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB433" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB432" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB434" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX79" populated="true" UUID="f48ebf6e-b1a8-4f01-9084-ae6316cf4ba0" clustered="false" name="dim_data_pk" physicalName="dim_data_pk" primaryKeyIndex="true" unique="false" >
+       </index>
+       <index id="IDX80" populated="true" UUID="d6d266db-9c82-422a-858a-5391254f9341" clustered="false" name="idx_dim_data_lookup" physicalName="idx_dim_data_lookup" primaryKeyIndex="false" unique="false" >
+        <index-column id="IDC81" populated="true" UUID="333eeb33-a272-449f-b3bb-eae59b0e8ac5" ascendingOrDescending="ASCENDING" column-ref="COL44" name="date_sk" physicalName="date_sk" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB82" populated="true" UUID="26d46c06-b38c-4d16-8b9e-007687b55397" name="dim_especie" objectType="TABLE" physicalName="dim_especie" >
+      <remarks></remarks>
+      <folder id="FOLTAB821" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL83" populated="true" UUID="eb1ba3ad-635a-4911-8579-91b02db97c7e" autoIncrement="true" defaultValue="nextval(&apos;dim_especie_i_dim_especie_sk_seq&apos;::regclass)" name="i_dim_especie_sk" nullable="0" physicalName="i_dim_especie_sk" precision="19" referenceCount="1" scale="0" sourceDataTypeName="bigserial" type="-5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL84" populated="true" UUID="7a963418-da40-4a3b-a4c0-41c78aeda7cf" autoIncrement="false" name="version" nullable="1" physicalName="version" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL85" populated="true" UUID="1eba1c6b-ef73-49f1-88c9-b8a1adc00d22" autoIncrement="false" name="date_from" nullable="1" physicalName="date_from" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks></remarks>
+       </column>
+       <column id="COL86" populated="true" UUID="ccb68ad8-2851-468b-8fa2-6d2bd82428f7" autoIncrement="false" name="date_to" nullable="1" physicalName="date_to" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks></remarks>
+       </column>
+       <column id="COL87" populated="true" UUID="aeaa6696-2507-4e9c-8cd1-75617d2b9da8" autoIncrement="false" name="codigoreporteespecies" nullable="1" physicalName="codigoreporteespecies" precision="19" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL88" populated="true" UUID="f9342d61-e4a8-41dc-8a65-1b699add3d26" autoIncrement="false" name="especie" nullable="1" physicalName="especie" precision="176" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB823" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB822" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB824" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX89" populated="true" UUID="0bd9a6c7-382b-4255-b3e0-1a06e0ccdf8e" clustered="false" name="dim_especie_pk" physicalName="dim_especie_pk" primaryKeyIndex="true" unique="false" >
+       </index>
+       <index id="IDX90" populated="true" UUID="fbb3932c-9268-421f-8318-b6e5faab14dd" clustered="false" name="idx_dim_especie_lookup" physicalName="idx_dim_especie_lookup" primaryKeyIndex="false" unique="false" >
+        <index-column id="IDC91" populated="true" UUID="e3b0942e-96a8-4138-8c4d-e75b62396442" ascendingOrDescending="ASCENDING" column-ref="COL87" name="codigoreporteespecies" physicalName="codigoreporteespecies" />
+       </index>
+       <index id="IDX92" populated="true" UUID="35bd647e-667a-40ea-b513-c3862b1e661f" clustered="false" name="idx_dim_especie_tk" physicalName="idx_dim_especie_tk" primaryKeyIndex="false" unique="false" >
+        <index-column id="IDC93" populated="true" UUID="9cfc1780-d23e-40e7-9831-f28ad109dcc1" ascendingOrDescending="ASCENDING" column-ref="COL83" name="i_dim_especie_sk" physicalName="i_dim_especie_sk" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB94" populated="true" UUID="f877c5a6-1aef-42b7-aa91-a36f09972b58" name="dim_junk_aeronave_ocorrencia" objectType="TABLE" physicalName="dim_junk_aeronave_ocorrencia" sql-exception="java.lang.IllegalStateException: Can&apos;t populate indices because it already contains children!" >
+      <remarks></remarks>
+      <folder id="FOLTAB941" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL95" populated="true" UUID="58acb107-11d6-4a91-99c8-988c8ca8a072" autoIncrement="true" defaultValue="nextval(&apos;dim_junk_aeronave_ocorrencia_i_junk_aeronave_ocorrencia_sk_seq&apos;::regclass)" name="i_junk_aeronave_ocorrencia_sk" nullable="0" physicalName="i_junk_aeronave_ocorrencia_sk" precision="19" referenceCount="1" scale="0" sourceDataTypeName="bigserial" type="-5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL96" populated="true" UUID="22dd9042-9167-49f7-a4de-438abced686c" autoIncrement="false" name="ocorrencia_classificacao" nullable="1" physicalName="ocorrencia_classificacao" precision="15" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL97" populated="true" UUID="b408d0d6-2cff-45bf-9899-98fd2cc51f99" autoIncrement="false" name="ocorrencia_tipo" nullable="1" physicalName="ocorrencia_tipo" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL98" populated="true" UUID="5e2bcb3d-6e60-420a-b58f-ab0b8c443368" autoIncrement="false" name="ocorrencia_tipo_categoria" nullable="1" physicalName="ocorrencia_tipo_categoria" precision="200" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL99" populated="true" UUID="3c4a15a3-fadf-47cc-9399-aa12ba905903" autoIncrement="false" name="taxonomia_tipo_icao" nullable="1" physicalName="taxonomia_tipo_icao" precision="26" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL100" populated="true" UUID="36bf5e64-86d0-4c6a-9624-a5b5bded2690" autoIncrement="false" name="classificacao_ocorrencia" nullable="1" physicalName="classificacao_ocorrencia" precision="29" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL101" populated="true" UUID="980fa1cd-4454-4589-b4ae-afc0e883f924" autoIncrement="false" name="tipo_reporte" nullable="1" physicalName="tipo_reporte" precision="13" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL102" populated="true" UUID="386c5c66-f74e-4c39-8210-c3a8923e2012" autoIncrement="false" name="aviaco_tipo" nullable="1" physicalName="aviaco_tipo" precision="12" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB943" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB942" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB944" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX103" populated="true" UUID="885a5bec-1d9b-4b81-8a75-33416da95119" clustered="false" name="dim_junk_aeronave_ocorrencia_pk" physicalName="dim_junk_aeronave_ocorrencia_pk" primaryKeyIndex="true" unique="false" >
+       </index>
+       <index id="IDX104" populated="true" UUID="63d7b28f-e484-47b9-8704-618939597201" clustered="false" name="idx_dim_junk_aeronave_ocorrencia_pk" physicalName="idx_dim_junk_aeronave_ocorrencia_pk" primaryKeyIndex="false" unique="true" >
+        <index-column id="IDC105" populated="true" UUID="07fbbf51-382d-4936-9cac-788060eb045d" ascendingOrDescending="ASCENDING" column-ref="COL95" name="i_junk_aeronave_ocorrencia_sk" physicalName="i_junk_aeronave_ocorrencia_sk" />
+       </index>
+       <index id="IDX106" populated="true" UUID="5b21ac93-46df-4d1f-9223-db073a0ccdcb" clustered="false" name="idx_dim_junk_aeronave_ocorrencia_lookup" physicalName="idx_dim_junk_aeronave_ocorrencia_lookup" primaryKeyIndex="false" unique="false" >
+        <index-column id="IDC107" populated="true" UUID="4b2fdebd-7678-4da3-a428-b1f8c01747a1" ascendingOrDescending="ASCENDING" column-ref="COL96" name="ocorrencia_classificacao" physicalName="ocorrencia_classificacao" />
+        <index-column id="IDC108" populated="true" UUID="b13c8fb1-3df0-43a4-bd1f-2e41aedbc587" ascendingOrDescending="ASCENDING" column-ref="COL97" name="ocorrencia_tipo" physicalName="ocorrencia_tipo" />
+        <index-column id="IDC109" populated="true" UUID="e05b7ba0-927a-47c1-9a34-bd80c7c0994c" ascendingOrDescending="ASCENDING" column-ref="COL98" name="ocorrencia_tipo_categoria" physicalName="ocorrencia_tipo_categoria" />
+        <index-column id="IDC110" populated="true" UUID="255fa0f1-5c86-47ba-89c5-7587d76eb23b" ascendingOrDescending="ASCENDING" column-ref="COL99" name="taxonomia_tipo_icao" physicalName="taxonomia_tipo_icao" />
+        <index-column id="IDC111" populated="true" UUID="7287456a-2146-478e-b59d-0032ff76cf10" ascendingOrDescending="ASCENDING" column-ref="COL100" name="classificacao_ocorrencia" physicalName="classificacao_ocorrencia" />
+        <index-column id="IDC112" populated="true" UUID="5dc51d11-0017-4140-a9c5-0b7ab217a130" ascendingOrDescending="ASCENDING" column-ref="COL101" name="tipo_reporte" physicalName="tipo_reporte" />
+        <index-column id="IDC113" populated="true" UUID="2591f96c-ad85-4ece-9bfa-0cabd8b8552a" ascendingOrDescending="ASCENDING" column-ref="COL102" name="aviaco_tipo" physicalName="aviaco_tipo" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB114" populated="true" UUID="73a960a5-f4db-4e67-8cae-683605d0440e" name="dim_localidade" objectType="TABLE" physicalName="dim_localidade" >
+      <remarks></remarks>
+      <folder id="FOLTAB1141" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL115" populated="true" UUID="22f424c8-417a-45ce-8e4e-f6e53fc66f69" autoIncrement="true" defaultValue="nextval(&apos;dim_localidade_i_dim_localidade_sk_seq&apos;::regclass)" name="i_dim_localidade_sk" nullable="0" physicalName="i_dim_localidade_sk" precision="19" referenceCount="1" scale="0" sourceDataTypeName="bigserial" type="-5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL116" populated="true" UUID="330914d9-b2f0-484d-9ad4-7ec9150cc251" autoIncrement="false" name="ocorrencia_latitude" nullable="1" physicalName="ocorrencia_latitude" precision="31" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL117" populated="true" UUID="71a79878-c698-452c-bfd7-00c957f24050" autoIncrement="false" name="ocorrencia_longitude" nullable="1" physicalName="ocorrencia_longitude" precision="31" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL118" populated="true" UUID="855aee30-5f20-4c95-96c1-59576e0292cd" autoIncrement="false" name="ocorrencia_cidade" nullable="1" physicalName="ocorrencia_cidade" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL119" populated="true" UUID="26cc3f7a-0933-4c62-8313-d4d33a566537" autoIncrement="false" name="ocorrencia_uf" nullable="1" physicalName="ocorrencia_uf" precision="22" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL120" populated="true" UUID="d9eb0b5f-e098-4da8-97ab-86a8fb2e74a2" autoIncrement="false" name="ocorrencia_pais" nullable="1" physicalName="ocorrencia_pais" precision="26" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL121" populated="true" UUID="b97d5514-20f0-46ef-839c-55f982c8e9aa" autoIncrement="false" name="ocorrencia_aerodromo" nullable="1" physicalName="ocorrencia_aerodromo" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB1143" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB1142" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB1144" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX122" populated="true" UUID="f01296eb-3711-4a0e-936a-888129a7fc10" clustered="false" name="dim_localidade_pk" physicalName="dim_localidade_pk" primaryKeyIndex="true" unique="false" >
+       </index>
+       <index id="IDX123" populated="true" UUID="b6a01e16-204f-4604-af68-a72a8f87db66" clustered="false" name="idx_dim_localidade_pk" physicalName="idx_dim_localidade_pk" primaryKeyIndex="false" unique="true" >
+        <index-column id="IDC124" populated="true" UUID="a9a2f90f-442a-431c-bb09-8beb20945ec6" ascendingOrDescending="ASCENDING" column-ref="COL115" name="i_dim_localidade_sk" physicalName="i_dim_localidade_sk" />
+       </index>
+       <index id="IDX125" populated="true" UUID="5ad7f918-e70c-4504-80cf-bc27d1dac394" clustered="false" name="idx_dim_localidade_lookup" physicalName="idx_dim_localidade_lookup" primaryKeyIndex="false" unique="false" >
+        <index-column id="IDC126" populated="true" UUID="eac7bab8-2cfe-4bb8-a0f8-9e249315c4fc" ascendingOrDescending="ASCENDING" column-ref="COL116" name="ocorrencia_latitude" physicalName="ocorrencia_latitude" />
+        <index-column id="IDC127" populated="true" UUID="c5299b6b-7dad-43da-9afc-5e154331e8c4" ascendingOrDescending="ASCENDING" column-ref="COL117" name="ocorrencia_longitude" physicalName="ocorrencia_longitude" />
+        <index-column id="IDC128" populated="true" UUID="adb6a231-88c9-477d-8ec2-9fa001eacfc7" ascendingOrDescending="ASCENDING" column-ref="COL118" name="ocorrencia_cidade" physicalName="ocorrencia_cidade" />
+        <index-column id="IDC129" populated="true" UUID="a3ee8fbe-08cb-4acd-a7b5-196e3ec924b3" ascendingOrDescending="ASCENDING" column-ref="COL119" name="ocorrencia_uf" physicalName="ocorrencia_uf" />
+        <index-column id="IDC130" populated="true" UUID="015c82dd-30fa-4858-bc9f-6d4dceb384e8" ascendingOrDescending="ASCENDING" column-ref="COL120" name="ocorrencia_pais" physicalName="ocorrencia_pais" />
+        <index-column id="IDC131" populated="true" UUID="40b5909e-abc6-45f7-8a58-76f453339b84" ascendingOrDescending="ASCENDING" column-ref="COL121" name="ocorrencia_aerodromo" physicalName="ocorrencia_aerodromo" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB132" populated="true" UUID="e74de519-123d-4b3f-81d4-204737390bd2" name="dim_ocorrencia_aeronave" objectType="TABLE" physicalName="dim_ocorrencia_aeronave" >
+      <remarks></remarks>
+      <folder id="FOLTAB1321" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL133" populated="true" UUID="d96f3cfd-e1b4-474e-9d0f-93cce51281c2" autoIncrement="true" defaultValue="nextval(&apos;dim_ocorrencia_aeronave_i_dim_ocorrencia_aeronave_sk_seq&apos;::regclass)" name="i_dim_ocorrencia_aeronave_sk" nullable="0" physicalName="i_dim_ocorrencia_aeronave_sk" precision="19" referenceCount="1" scale="0" sourceDataTypeName="bigserial" type="-5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL134" populated="true" UUID="848d57a1-a4e3-4ca2-9a6b-12cb9c1c1752" autoIncrement="false" name="version" nullable="1" physicalName="version" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL135" populated="true" UUID="e7023fad-3285-49f6-be8d-67b8170971a8" autoIncrement="false" name="date_from" nullable="1" physicalName="date_from" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks></remarks>
+       </column>
+       <column id="COL136" populated="true" UUID="a19ee8cf-7d25-409e-af06-448e7e55c857" autoIncrement="false" name="date_to" nullable="1" physicalName="date_to" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks></remarks>
+       </column>
+       <column id="COL137" populated="true" UUID="0775cb75-2540-4a96-8527-4527580d3c06" autoIncrement="false" name="codigo_ocorrencia1" nullable="1" physicalName="codigo_ocorrencia1" precision="15" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL138" populated="true" UUID="28c62555-4d65-4e43-ac2c-5dd8a319e1ac" autoIncrement="false" name="investigacao_aeronave_liberada" nullable="1" physicalName="investigacao_aeronave_liberada" precision="28" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL139" populated="true" UUID="df7d40b1-ef0c-4272-9f7a-4926f9ed7f25" autoIncrement="false" name="investigacao_status" nullable="1" physicalName="investigacao_status" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL140" populated="true" UUID="87f1a27b-bb65-4940-8ca8-5f92ec7bc2e8" autoIncrement="false" name="divulgacao_relatorio_numero" nullable="1" physicalName="divulgacao_relatorio_numero" precision="38" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL141" populated="true" UUID="8ef6a2bb-b3b7-44fb-81ee-033cd6efd847" autoIncrement="false" name="divulgacao_relatorio_publicado" nullable="1" physicalName="divulgacao_relatorio_publicado" precision="34" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL142" populated="true" UUID="a59880f7-491c-4ed4-a662-154d91db442b" autoIncrement="false" name="ocorrencia_saida_pista" nullable="1" physicalName="ocorrencia_saida_pista" precision="23" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL143" populated="true" UUID="dc0336f7-1423-40e6-928b-f955c61abef2" autoIncrement="false" name="recomendacao_numero" nullable="1" physicalName="recomendacao_numero" precision="38" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL144" populated="true" UUID="aeffb9b8-3fad-4882-baed-b99a94197fc9" autoIncrement="false" name="recomendacao_dia_assinatura" nullable="1" physicalName="recomendacao_dia_assinatura" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL145" populated="true" UUID="037e98e9-29cf-4b8b-a911-984dec3b43ed" autoIncrement="false" name="recomendacao_dia_encaminhamento" nullable="1" physicalName="recomendacao_dia_encaminhamento" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL146" populated="true" UUID="c9eac497-1343-4fe7-9c3b-59e9f3c0085d" autoIncrement="false" name="recomendacao_dia_feedback" nullable="1" physicalName="recomendacao_dia_feedback" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL147" populated="true" UUID="101eaa31-fddc-4558-bfa4-5ef46b046bb4" autoIncrement="false" name="recomendacao_conteudo" nullable="1" physicalName="recomendacao_conteudo" precision="1000" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL148" populated="true" UUID="aaf16a6e-1cc8-4973-8dbf-99c4e8272a55" autoIncrement="false" name="recomendacao_status" nullable="1" physicalName="recomendacao_status" precision="29" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL149" populated="true" UUID="8944a81b-38ea-4a1b-84a1-4244c6429b7e" autoIncrement="false" name="recomendacao_destinatario_sigla" nullable="1" physicalName="recomendacao_destinatario_sigla" precision="28" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL150" populated="true" UUID="df08b11d-8137-49c6-9c93-2c3a5d1ffbc6" autoIncrement="false" name="recomendacao_destinatario" nullable="1" physicalName="recomendacao_destinatario" precision="79" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL151" populated="true" UUID="e2a17471-84b9-4cb7-ab24-b6ac2cf69e86" autoIncrement="false" name="status" nullable="1" physicalName="status" precision="47" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL152" populated="true" UUID="106839fd-c6ae-4869-a4eb-5b204ec08102" autoIncrement="false" name="operador" nullable="1" physicalName="operador" precision="34" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL153" populated="true" UUID="7ea70561-67f1-40f2-af99-2b8dfc2dd946" autoIncrement="false" name="periodo_dia" nullable="1" physicalName="periodo_dia" precision="28" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL154" populated="true" UUID="d1943157-fa53-416e-87b5-bd94ae0b363f" autoIncrement="false" name="icao" nullable="1" physicalName="icao" precision="44" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL155" populated="true" UUID="75fe8942-93d0-40f5-bc6c-08f533b86f93" autoIncrement="false" name="pista" nullable="1" physicalName="pista" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL156" populated="true" UUID="9d0ec413-599e-4dc0-ac30-1f7062a4732e" autoIncrement="false" name="lado" nullable="1" physicalName="lado" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL157" populated="true" UUID="2d0fa854-9a1e-44a4-9b0a-c79625745c56" autoIncrement="false" name="asa" nullable="1" physicalName="asa" precision="23" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL158" populated="true" UUID="8e5f0fbc-3aee-40c4-a619-0b6dd9dccc75" autoIncrement="false" name="coordenada_radial" nullable="1" physicalName="coordenada_radial" precision="97" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL159" populated="true" UUID="626a620c-18d7-4fa5-ad8f-235cba50e33f" autoIncrement="false" name="altura" nullable="1" physicalName="altura" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL160" populated="true" UUID="37e00e1c-4628-4e3f-b148-e75ddeb1c77b" autoIncrement="false" name="velocidade" nullable="1" physicalName="velocidade" precision="15" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL161" populated="true" UUID="0aaf300d-3bf0-4227-af6a-e87b9951a1cc" autoIncrement="false" name="fase_voo" nullable="1" physicalName="fase_voo" precision="29" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL162" populated="true" UUID="371599b8-5fce-4cf3-a892-787fe25772f2" autoIncrement="false" name="efeito_voo" nullable="1" physicalName="efeito_voo" precision="71" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL163" populated="true" UUID="e75fdfb2-e2cb-4b61-b2ee-2cfaabebe03d" autoIncrement="false" name="condicao_ceu" nullable="1" physicalName="condicao_ceu" precision="13" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL164" populated="true" UUID="1764fac9-4bba-4036-b4e9-0cac360e16d6" autoIncrement="false" name="visibilidade" nullable="1" physicalName="visibilidade" precision="28" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL165" populated="true" UUID="2f99972a-2eb8-4b2a-a7bc-ceb70e883846" autoIncrement="false" name="precipitacao" nullable="1" physicalName="precipitacao" precision="45" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL166" populated="true" UUID="96476b00-a8cc-4fab-9fc8-82f0c53a596f" autoIncrement="false" name="danos_prejuizo" nullable="1" physicalName="danos_prejuizo" precision="13" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL167" populated="true" UUID="6b857910-c1fc-4bac-aeed-431a907ac44b" autoIncrement="false" name="indisponibilidade_anv" nullable="1" physicalName="indisponibilidade_anv" precision="47" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL168" populated="true" UUID="52a58ba5-ca66-4550-8a4e-9dd62292e5fe" autoIncrement="false" name="piloto_alertado" nullable="1" physicalName="piloto_alertado" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL169" populated="true" UUID="30517ebc-5b93-4776-8d40-c94775f496fc" autoIncrement="false" name="atingida1" nullable="1" physicalName="atingida1" precision="35" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL170" populated="true" UUID="389bb08b-c459-4aa1-a4dd-7c3f12962f5d" autoIncrement="false" name="atingida2" nullable="1" physicalName="atingida2" precision="19" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL171" populated="true" UUID="c7bbd00c-67be-40b5-a971-d5bfaa60a57e" autoIncrement="false" name="atingida3" nullable="1" physicalName="atingida3" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL172" populated="true" UUID="c1fbc723-98c4-46f2-a319-0ca151a6d26d" autoIncrement="false" name="atingida4" nullable="1" physicalName="atingida4" precision="21" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL173" populated="true" UUID="49b92ca8-e1df-4a4a-8139-86e1a8685df1" autoIncrement="false" name="atingida5" nullable="1" physicalName="atingida5" precision="21" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL174" populated="true" UUID="51630ca5-3289-462e-ba8b-e7e316b81d38" autoIncrement="false" name="atingida6" nullable="1" physicalName="atingida6" precision="31" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL175" populated="true" UUID="fdc0663e-486b-473e-bc70-f54a54958bb8" autoIncrement="false" name="atingida7" nullable="1" physicalName="atingida7" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL176" populated="true" UUID="ed43a566-1f8d-4543-9128-6d466456d0f0" autoIncrement="false" name="atingida8" nullable="1" physicalName="atingida8" precision="22" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL177" populated="true" UUID="69b166eb-f4c1-4f13-a63e-08b32753dd34" autoIncrement="false" name="atingida9" nullable="1" physicalName="atingida9" precision="23" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL178" populated="true" UUID="9233e271-908e-44ff-b5a1-3c155aae1a92" autoIncrement="false" name="atingida10" nullable="1" physicalName="atingida10" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL179" populated="true" UUID="4d6cb5b4-7aa7-43f0-8f11-018b992b037a" autoIncrement="false" name="atingida11" nullable="1" physicalName="atingida11" precision="13" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL180" populated="true" UUID="7eff969f-ca1f-41b8-aa8e-c3c6dbb87386" autoIncrement="false" name="danificado1" nullable="1" physicalName="danificado1" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL181" populated="true" UUID="17cb62b1-690e-43a7-97ec-31902f11b1ec" autoIncrement="false" name="danificado2" nullable="1" physicalName="danificado2" precision="21" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL182" populated="true" UUID="802afe95-4366-409a-b647-20784c0e0621" autoIncrement="false" name="danificado3" nullable="1" physicalName="danificado3" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL183" populated="true" UUID="2e8e1884-6b2b-48fa-91b4-b7e670e4544c" autoIncrement="false" name="danificado4" nullable="1" physicalName="danificado4" precision="23" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL184" populated="true" UUID="f554d878-5e02-472e-a01c-a59d6978afac" autoIncrement="false" name="danificado5" nullable="1" physicalName="danificado5" precision="23" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL185" populated="true" UUID="8a40b8fc-e173-43df-80ea-200916a2490a" autoIncrement="false" name="danificado6" nullable="1" physicalName="danificado6" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL186" populated="true" UUID="900a7ad2-e728-4e37-b62d-4a113f6e3f97" autoIncrement="false" name="danificado7" nullable="1" physicalName="danificado7" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL187" populated="true" UUID="285710c0-8ab0-4709-87a1-effbf1e4bf90" autoIncrement="false" name="danificado8" nullable="1" physicalName="danificado8" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL188" populated="true" UUID="82d94a72-23e1-41d6-a992-16fc19c85a72" autoIncrement="false" name="danificado9" nullable="1" physicalName="danificado9" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL189" populated="true" UUID="b26d0408-488d-4733-9995-085ef647f81c" autoIncrement="false" name="danificado10" nullable="1" physicalName="danificado10" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL190" populated="true" UUID="9438da1f-da13-496f-95f1-5d96156e6408" autoIncrement="false" name="danificado11" nullable="1" physicalName="danificado11" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL191" populated="true" UUID="99f335b4-41dc-4bc4-9f35-997bd7bbbe42" autoIncrement="false" name="outrafasevoo" nullable="1" physicalName="outrafasevoo" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL192" populated="true" UUID="60553982-e7cd-4410-9acd-63f4f8f27234" autoIncrement="false" name="ingestao_motor" nullable="1" physicalName="ingestao_motor" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL193" populated="true" UUID="923f4d26-bacb-4d30-8d55-a1a099e6c9da" autoIncrement="false" name="ingestao_multipla" nullable="1" physicalName="ingestao_multipla" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL194" populated="true" UUID="59ccce9b-983d-46ab-bb71-674035fa38ec" autoIncrement="false" name="parte_da_aeronave" nullable="1" physicalName="parte_da_aeronave" precision="350" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL195" populated="true" UUID="35e14693-c15b-4ee4-9afb-6d07b9f5d051" autoIncrement="false" name="outraanvparte" nullable="1" physicalName="outraanvparte" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL196" populated="true" UUID="c6eaad90-e00f-4e1d-9e6d-6b149c4d7d05" autoIncrement="false" name="coletada" nullable="1" physicalName="coletada" precision="23" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL197" populated="true" UUID="58bee16e-a3c1-41e8-b80c-b8f8ba4cef61" autoIncrement="false" name="fotografada" nullable="1" physicalName="fotografada" precision="26" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL198" populated="true" UUID="54e3ec04-f9c6-4956-96b5-395485de25fa" autoIncrement="false" name="enviada" nullable="1" physicalName="enviada" precision="29" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL199" populated="true" UUID="ed845ad7-4a00-49ce-a4fa-2c888ec648b0" autoIncrement="false" name="amostra" nullable="1" physicalName="amostra" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL200" populated="true" UUID="ee49fbc5-3701-4d02-9541-158db79ba8c1" autoIncrement="false" name="avistada" nullable="1" physicalName="avistada" precision="11" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL201" populated="true" UUID="ea621dbf-115c-427f-8b06-175e73116b94" autoIncrement="false" name="atingida" nullable="1" physicalName="atingida" precision="27" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL202" populated="true" UUID="bc43a105-f216-465e-b0e2-bc3dafe3a908" autoIncrement="false" name="tamanho_sugerido" nullable="1" physicalName="tamanho_sugerido" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL203" populated="true" UUID="b58a2ea6-a80a-4ae5-85e9-c158e270c3c6" autoIncrement="false" name="fator_nome" nullable="1" physicalName="fator_nome" precision="53" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL204" populated="true" UUID="bb0d65cb-7bf6-41ed-a11b-147e3014d255" autoIncrement="false" name="fator_aspecto" nullable="1" physicalName="fator_aspecto" precision="46" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL205" populated="true" UUID="843dadd9-31d2-4651-a1d8-a7997a8b67f3" autoIncrement="false" name="fator_condicionante" nullable="1" physicalName="fator_condicionante" precision="42" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL206" populated="true" UUID="b0c4a4a8-0ad2-4a7e-ac8c-090147bdb76e" autoIncrement="false" name="fator_area" nullable="1" physicalName="fator_area" precision="17" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB1323" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB1322" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB1324" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX207" populated="true" UUID="9895d9e9-b483-41bc-aef1-9a775eea1e36" clustered="false" name="dim_ocorrencia_aeronave_pk" physicalName="dim_ocorrencia_aeronave_pk" primaryKeyIndex="true" unique="false" >
+       </index>
+       <index id="IDX208" populated="true" UUID="6a1c0242-253f-4788-b8fe-aec8e8928f57" clustered="false" name="idx_dim_ocorrencia_aeronave_lookup" physicalName="idx_dim_ocorrencia_aeronave_lookup" primaryKeyIndex="false" unique="false" >
+        <index-column id="IDC209" populated="true" UUID="c17d58c0-ac9f-46e4-bbbe-9af1fbf9931c" ascendingOrDescending="ASCENDING" column-ref="COL137" name="codigo_ocorrencia1" physicalName="codigo_ocorrencia1" />
+       </index>
+       <index id="IDX210" populated="true" UUID="7c0d001a-a310-4125-adbf-61b0a78a49de" clustered="false" name="idx_dim_ocorrencia_aeronave_tk" physicalName="idx_dim_ocorrencia_aeronave_tk" primaryKeyIndex="false" unique="false" >
+        <index-column id="IDC211" populated="true" UUID="2dd3a47f-2128-4388-8b16-edc7b93be7fb" ascendingOrDescending="ASCENDING" column-ref="COL133" name="i_dim_ocorrencia_aeronave_sk" physicalName="i_dim_ocorrencia_aeronave_sk" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB212" populated="true" UUID="eda963eb-12db-44b0-a7f4-2c1abe34fb40" name="dim_time" objectType="TABLE" physicalName="dim_time" >
+      <remarks></remarks>
+      <folder id="FOLTAB2121" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL213" populated="true" UUID="ecf9c9e4-d05b-4bf4-86c9-d754d7ce8253" autoIncrement="false" name="s_hora" nullable="1" physicalName="s_hora" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL214" populated="true" UUID="63f25579-0773-41dc-b79d-1e153999ab17" autoIncrement="false" name="s_minuto" nullable="1" physicalName="s_minuto" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL215" populated="true" UUID="56a45556-cbc0-4beb-9dab-a8bb601e96ff" autoIncrement="false" name="i_hora" nullable="1" physicalName="i_hora" precision="17" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+        <remarks></remarks>
+       </column>
+       <column id="COL216" populated="true" UUID="504905a8-3274-4a95-96da-f3b898c6fa7b" autoIncrement="false" name="i_minuto" nullable="1" physicalName="i_minuto" precision="17" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+        <remarks></remarks>
+       </column>
+       <column id="COL217" populated="true" UUID="8942bbb7-576a-431a-bb5d-cfea00c1dc4c" autoIncrement="false" name="id_time_sk" nullable="1" physicalName="id_time_sk" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL218" populated="true" UUID="90652a4c-66f6-49a1-a005-6a676cdad499" autoIncrement="false" name="id_time_integer_sk" nullable="1" physicalName="id_time_integer_sk" precision="17" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB2123" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB2122" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB2124" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX219" populated="true" UUID="52d1ae09-231a-4dbd-a314-9761e8fd3cfb" clustered="false" name="dim_time_pk" physicalName="dim_time_pk" primaryKeyIndex="true" unique="false" >
+       </index>
+      </folder>
+     </table>
+     <table id="TAB220" populated="true" UUID="0f09bcdc-f4c8-4e3f-80fc-1afbb903451e" name="fato_ocorrencia" objectType="TABLE" physicalName="fato_ocorrencia" >
+      <remarks></remarks>
+      <folder id="FOLTAB2201" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL221" populated="true" UUID="fe322231-548c-4a3a-b876-51fe047ceaea" autoIncrement="false" name="id_codocorrencia_pk" nullable="1" physicalName="id_codocorrencia_pk" precision="19" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL222" populated="true" UUID="4758ac39-7a0b-41da-9bdc-c9c663745bb5" autoIncrement="false" name="i_data_ocorrencia_sk" nullable="1" physicalName="i_data_ocorrencia_sk" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL223" populated="true" UUID="bc058bf1-2941-4a26-9c95-88e10e43a6a6" autoIncrement="false" name="i_time_sk" nullable="1" physicalName="i_time_sk" precision="5" referenceCount="1" scale="0" sourceDataTypeName="int2" type="5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL224" populated="true" UUID="c1a6fc34-c86c-4e24-8ac0-c6c672e482ee" autoIncrement="false" name="i_data_publicacao" nullable="1" physicalName="i_data_publicacao" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL225" populated="true" UUID="69504029-ce7c-4885-bd24-67e6cc738cb3" autoIncrement="false" name="i_total_recomendacoes" nullable="1" physicalName="i_total_recomendacoes" precision="19" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL226" populated="true" UUID="d8e43e24-3dc5-4a46-9440-e3628460d08a" autoIncrement="false" name="i_total_aeronaves_envolvidas" nullable="1" physicalName="i_total_aeronaves_envolvidas" precision="19" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL227" populated="true" UUID="c29084ca-4c3e-4fb0-94e5-ddcc84493374" autoIncrement="false" name="i_aeronave_assentos" nullable="1" physicalName="i_aeronave_assentos" precision="19" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL228" populated="true" UUID="045e5916-1e55-4cae-b27c-466001d4ec6b" autoIncrement="false" name="i_data_reporte" nullable="1" physicalName="i_data_reporte" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL229" populated="true" UUID="af049ebe-6afd-4507-b658-36fff8b0fe0d" autoIncrement="false" name="i_hora_reporte" nullable="1" physicalName="i_hora_reporte" precision="5" referenceCount="1" scale="0" sourceDataTypeName="int2" type="5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL230" populated="true" UUID="710399f7-a80b-42c1-8e97-23d494793609" autoIncrement="false" name="i_junk_aeronave_ocorrencia_sk" nullable="1" physicalName="i_junk_aeronave_ocorrencia_sk" precision="19" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL231" populated="true" UUID="4007a32a-e5f1-4648-aa95-ca843084b185" autoIncrement="false" name="i_dim_aeronave_sk" nullable="1" physicalName="i_dim_aeronave_sk" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL232" populated="true" UUID="4d81a35f-047f-443d-81a1-8bea7879c78e" autoIncrement="false" name="i_dim_ocorrencia_aeronave_sk" nullable="1" physicalName="i_dim_ocorrencia_aeronave_sk" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL233" populated="true" UUID="9e517a03-9cab-468f-a30b-af27557864c0" autoIncrement="false" name="i_dim_localidade_sk" nullable="1" physicalName="i_dim_localidade_sk" precision="19" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+        <remarks></remarks>
+       </column>
+       <column id="COL234" populated="true" UUID="1d3517dd-1b27-402b-98f1-f2cbd3d7036e" autoIncrement="false" name="i_dim_especie_sk" nullable="1" physicalName="i_dim_especie_sk" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB2203" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB2202" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB2204" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX235" populated="true" UUID="6245f26e-295d-4da8-b2b6-c26d59b2da4e" clustered="false" name="fato_ocorrencia_pk" physicalName="fato_ocorrencia_pk" primaryKeyIndex="true" unique="false" >
+       </index>
+      </folder>
+     </table>
+    </schema>
+   </catalog>
+   <relationships>
+   </relationships>
+  </database>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB237" populated="true" UUID="76a6746b-445a-4a86-9566-863cb9012332" name="fato_ocorrencia" objectType="TABLE" physicalName="fato_ocorrencia" >
+   <remarks></remarks>
+   <folder id="FOLTAB2371" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL238" populated="true" UUID="c1b9db04-4ff2-43cd-a356-f9bf9ea5399b" autoIncrement="false" defaultValue="" name="id_codocorrencia_pk" nullable="1" physicalName="id_codocorrencia_pk" precision="0" referenceCount="1" scale="0" source-column-ref="COL221" sourceDataTypeName="int8" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    <column id="COL239" populated="true" UUID="c6594fac-5857-4b22-8331-0baa48606002" autoIncrement="false" defaultValue="" name="i_data_ocorrencia_sk" nullable="1" physicalName="i_data_ocorrencia_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL222" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL240" populated="true" UUID="6d4aec32-9044-4185-9c4b-f51efa736cd9" autoIncrement="false" defaultValue="" name="i_data_publicacao" nullable="1" physicalName="i_data_publicacao" precision="0" referenceCount="1" scale="0" source-column-ref="COL224" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL241" populated="true" UUID="957e22d2-a83c-40bd-a19b-73ac0a67ca46" autoIncrement="false" defaultValue="" name="i_total_recomendacoes" nullable="1" physicalName="i_total_recomendacoes" precision="0" referenceCount="1" scale="0" source-column-ref="COL225" sourceDataTypeName="int8" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    <column id="COL242" populated="true" UUID="1e7c4919-03df-426e-8f7b-1c1031481d9e" autoIncrement="false" defaultValue="" name="i_total_aeronaves_envolvidas" nullable="1" physicalName="i_total_aeronaves_envolvidas" precision="0" referenceCount="1" scale="0" source-column-ref="COL226" sourceDataTypeName="int8" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    <column id="COL243" populated="true" UUID="579a14a1-7256-49a9-a5a5-c394b02ff61b" autoIncrement="false" defaultValue="" name="i_aeronave_assentos" nullable="1" physicalName="i_aeronave_assentos" precision="0" referenceCount="1" scale="0" source-column-ref="COL227" sourceDataTypeName="int8" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    <column id="COL244" populated="true" UUID="439461a1-62b4-4631-b79b-086c256ba65e" autoIncrement="false" defaultValue="" name="i_data_reporte" nullable="1" physicalName="i_data_reporte" precision="0" referenceCount="1" scale="0" source-column-ref="COL228" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL245" populated="true" UUID="3d87671e-5050-40d4-975e-e500c0ecd60d" autoIncrement="false" defaultValue="" name="i_hora_reporte" nullable="1" physicalName="i_hora_reporte" precision="0" referenceCount="1" scale="0" source-column-ref="COL229" sourceDataTypeName="int2" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks></remarks>
+    </column>
+    <column id="COL246" populated="true" UUID="4bbb0b24-a95d-49e7-a9e4-f0d744cf71ad" autoIncrement="false" defaultValue="" name="i_junk_aeronave_ocorrencia_sk" nullable="1" physicalName="i_junk_aeronave_ocorrencia_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL230" sourceDataTypeName="int8" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    <column id="COL247" populated="true" UUID="d7e7f9bd-47f1-4935-baaa-9138c58debef" autoIncrement="false" defaultValue="" name="i_dim_aeronave_sk" nullable="1" physicalName="i_dim_aeronave_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL231" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL248" populated="true" UUID="74aca243-5951-4ba9-9bd0-55b17a9f363a" autoIncrement="false" defaultValue="" name="i_dim_ocorrencia_aeronave_sk" nullable="1" physicalName="i_dim_ocorrencia_aeronave_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL232" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL249" populated="true" UUID="a3a67d27-c90e-4532-8226-7ab97c64cc8b" autoIncrement="false" defaultValue="" name="i_dim_localidade_sk" nullable="1" physicalName="i_dim_localidade_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL233" sourceDataTypeName="int8" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    <column id="COL250" populated="true" UUID="85a12c34-a287-4d5d-b0c6-ab56d4dc3610" autoIncrement="false" defaultValue="" name="i_dim_especie_sk" nullable="1" physicalName="i_dim_especie_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL234" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB2373" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB2372" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB2374" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX251" populated="true" UUID="07580e7e-6e24-41c6-93ab-d82cea3ee1e6" clustered="false" name="fato_ocorrencia_pk" physicalName="fato_ocorrencia_pk" primaryKeyIndex="true" unique="false" >
+    </index>
+   </folder>
+  </table>
+  <table id="TAB252" populated="true" UUID="e5a1f468-4277-4181-883f-17c9e1ef49cb" name="dim_aeronave" objectType="TABLE" physicalName="dim_aeronave" >
+   <remarks></remarks>
+   <folder id="FOLTAB2521" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL253" populated="true" UUID="b27d98d6-5c80-4460-b563-2c763ab7dbed" autoIncrement="true" defaultValue="nextval(&apos;dim_aeronave_i_dim_aeronave_sk_seq&apos;::regclass)" name="i_dim_aeronave_sk" nullable="0" physicalName="i_dim_aeronave_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL6" sourceDataTypeName="bigserial" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    <column id="COL254" populated="true" UUID="eb338a49-23af-4f79-b685-518a812ffe92" autoIncrement="false" defaultValue="" name="version" nullable="1" physicalName="version" precision="0" referenceCount="1" scale="0" source-column-ref="COL7" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL255" populated="true" UUID="5c9a718f-33fc-4680-915d-6234753630c0" autoIncrement="false" defaultValue="" name="i_time_sk" nullable="1" physicalName="i_time_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL223" sourceDataTypeName="int2" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks></remarks>
+    </column>
+    <column id="COL256" populated="true" UUID="7ecde4dc-4ac5-4074-91f9-c31bde811f8d" autoIncrement="false" defaultValue="" name="date_from" nullable="1" physicalName="date_from" precision="0" referenceCount="1" scale="0" source-column-ref="COL8" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    <column id="COL257" populated="true" UUID="4fc68944-3788-4819-aa90-6302fbc5503b" autoIncrement="false" defaultValue="" name="date_to" nullable="1" physicalName="date_to" precision="0" referenceCount="1" scale="0" source-column-ref="COL9" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    <column id="COL258" populated="true" UUID="09959925-5bb1-45ef-a289-4a51475c9222" autoIncrement="false" defaultValue="" name="aeronave_matricula" nullable="1" physicalName="aeronave_matricula" precision="35" referenceCount="1" scale="0" source-column-ref="COL10" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL259" populated="true" UUID="9845c315-c288-40b8-884e-0e832fcf5806" autoIncrement="false" defaultValue="" name="aeronave_operador_categoria" nullable="1" physicalName="aeronave_operador_categoria" precision="30" referenceCount="1" scale="0" source-column-ref="COL11" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL260" populated="true" UUID="5d24cfd4-192a-4785-be43-e1315ee7e72e" autoIncrement="false" defaultValue="" name="aeronave_tipo_veiculo" nullable="1" physicalName="aeronave_tipo_veiculo" precision="35" referenceCount="1" scale="0" source-column-ref="COL12" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL261" populated="true" UUID="3f8f23b9-1bb7-4188-b912-f2af9a9f2538" autoIncrement="false" defaultValue="" name="aeronave_fabricante" nullable="1" physicalName="aeronave_fabricante" precision="59" referenceCount="1" scale="0" source-column-ref="COL13" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL262" populated="true" UUID="f69693e1-4885-4a5c-976a-f1b8063e870d" autoIncrement="false" defaultValue="" name="aeronave_modelo" nullable="1" physicalName="aeronave_modelo" precision="45" referenceCount="1" scale="0" source-column-ref="COL14" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL263" populated="true" UUID="1f3c1e27-c0c5-44e3-b288-cd9971d647f8" autoIncrement="false" defaultValue="" name="aeronave_tipo_icao" nullable="1" physicalName="aeronave_tipo_icao" precision="27" referenceCount="1" scale="0" source-column-ref="COL15" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL264" populated="true" UUID="f03d2817-87d6-411d-b994-6c20ea8b939a" autoIncrement="false" defaultValue="" name="aeronave_motor_tipo" nullable="1" physicalName="aeronave_motor_tipo" precision="10" referenceCount="1" scale="0" source-column-ref="COL16" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL265" populated="true" UUID="8621c021-db21-48a9-be39-4e553e63d9f0" autoIncrement="false" defaultValue="" name="aeronave_motor_quantidade" nullable="1" physicalName="aeronave_motor_quantidade" precision="19" referenceCount="1" scale="0" source-column-ref="COL17" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL266" populated="true" UUID="81a2e941-a6de-413e-85b3-fa4485f15953" autoIncrement="false" defaultValue="" name="aeronave_pmd" nullable="1" physicalName="aeronave_pmd" precision="36" referenceCount="1" scale="0" source-column-ref="COL18" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL267" populated="true" UUID="a0b4f27a-4600-4f14-b4ee-30843f86ad8a" autoIncrement="false" defaultValue="" name="aeronave_pmd_categoria" nullable="1" physicalName="aeronave_pmd_categoria" precision="37" referenceCount="1" scale="0" source-column-ref="COL19" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL268" populated="true" UUID="ccd8d726-694d-42bf-947d-9a5efe0d7374" autoIncrement="false" defaultValue="" name="aeronave_ano_fabricacao" nullable="1" physicalName="aeronave_ano_fabricacao" precision="4" referenceCount="1" scale="0" source-column-ref="COL20" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL269" populated="true" UUID="bba5d4da-9687-40c6-8509-bc8ee0aa3bea" autoIncrement="false" defaultValue="" name="aeronave_pais_fabricante" nullable="1" physicalName="aeronave_pais_fabricante" precision="27" referenceCount="1" scale="0" source-column-ref="COL21" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL270" populated="true" UUID="f6e5d87b-0f35-4572-8e4c-68ec7f8e5f80" autoIncrement="false" defaultValue="" name="aeronave_pais_registro" nullable="1" physicalName="aeronave_pais_registro" precision="26" referenceCount="1" scale="0" source-column-ref="COL22" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL271" populated="true" UUID="53a38656-9f8a-4dd2-b77b-60ed679465fd" autoIncrement="false" defaultValue="" name="aeronave_registro_categoria" nullable="1" physicalName="aeronave_registro_categoria" precision="36" referenceCount="1" scale="0" source-column-ref="COL23" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL272" populated="true" UUID="6ad08eca-bfd3-48eb-8dcf-0136d7cd12bd" autoIncrement="false" defaultValue="" name="aeronave_registro_segmento" nullable="1" physicalName="aeronave_registro_segmento" precision="22" referenceCount="1" scale="0" source-column-ref="COL24" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL273" populated="true" UUID="c1b40b9a-59d1-40ca-8777-5edfebaae5b4" autoIncrement="false" defaultValue="" name="aeronave_voo_origem" nullable="1" physicalName="aeronave_voo_origem" precision="73" referenceCount="1" scale="0" source-column-ref="COL25" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL274" populated="true" UUID="0e6f0a94-e9b1-4984-932e-af9cd9aa599c" autoIncrement="false" defaultValue="" name="aeronave_voo_destino" nullable="1" physicalName="aeronave_voo_destino" precision="100" referenceCount="1" scale="0" source-column-ref="COL26" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL275" populated="true" UUID="aa51cb14-7211-4211-87c0-245eff270ae3" autoIncrement="false" defaultValue="" name="aeronave_fase_operacao" nullable="1" physicalName="aeronave_fase_operacao" precision="44" referenceCount="1" scale="0" source-column-ref="COL27" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL276" populated="true" UUID="901888a6-6503-4860-8950-be6a8a7bc6c1" autoIncrement="false" defaultValue="" name="aeronave_tipo_operacao" nullable="1" physicalName="aeronave_tipo_operacao" precision="23" referenceCount="1" scale="0" source-column-ref="COL28" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL277" populated="true" UUID="e57c2778-941b-4a36-a206-46f3d4d18440" autoIncrement="false" defaultValue="" name="aeronave_nivel_dano" nullable="1" physicalName="aeronave_nivel_dano" precision="37" referenceCount="1" scale="0" source-column-ref="COL29" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL278" populated="true" UUID="9dc02407-566e-4130-a906-061e676ef686" autoIncrement="false" defaultValue="" name="matricula_anv" nullable="1" physicalName="matricula_anv" precision="35" referenceCount="1" scale="0" source-column-ref="COL30" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL279" populated="true" UUID="8c712f0f-13d2-491d-9a85-b07957aafe88" autoIncrement="false" defaultValue="" name="fabricante_anv" nullable="1" physicalName="fabricante_anv" precision="34" referenceCount="1" scale="0" source-column-ref="COL31" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL280" populated="true" UUID="7081915b-5d18-47f9-aa5c-e59abe2cb0fb" autoIncrement="false" defaultValue="" name="modelo_anv" nullable="1" physicalName="modelo_anv" precision="73" referenceCount="1" scale="0" source-column-ref="COL32" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL281" populated="true" UUID="429404b0-5f03-4aad-a8bf-e1b1665c94ca" autoIncrement="false" defaultValue="" name="fabricante_motor" nullable="1" physicalName="fabricante_motor" precision="34" referenceCount="1" scale="0" source-column-ref="COL33" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL282" populated="true" UUID="fb4a0c7d-89a2-4392-9614-da95087e518f" autoIncrement="false" defaultValue="" name="modelo_motor" nullable="1" physicalName="modelo_motor" precision="34" referenceCount="1" scale="0" source-column-ref="COL34" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL283" populated="true" UUID="6eb92cc6-cfab-4b76-b45f-de73c8a21657" autoIncrement="false" defaultValue="" name="numeromotor" nullable="1" physicalName="numeromotor" precision="48" referenceCount="1" scale="0" source-column-ref="COL35" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL284" populated="true" UUID="4c9d0511-d042-4881-a92a-bb071fbb9e6a" autoIncrement="false" defaultValue="" name="numerohelice" nullable="1" physicalName="numerohelice" precision="35" referenceCount="1" scale="0" source-column-ref="COL36" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL285" populated="true" UUID="e51fcb60-d76b-4995-a65a-7c855d3116e0" autoIncrement="false" defaultValue="" name="i_junk_aeronave_ocorrencia_sk" nullable="1" physicalName="i_junk_aeronave_ocorrencia_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL37" sourceDataTypeName="int8" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB2523" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB2522" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB2524" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX286" populated="true" UUID="3e3a7669-f543-466d-9718-3b45e97242bb" clustered="false" name="dim_aeronave_pk" physicalName="dim_aeronave_pk" primaryKeyIndex="true" unique="false" >
+    </index>
+    <index id="IDX287" populated="true" UUID="0acd9a92-a25d-4e56-bb89-175cc5a4efcd" clustered="false" name="idx_dim_aeronave_lookup" physicalName="idx_dim_aeronave_lookup" primaryKeyIndex="false" unique="false" >
+     <index-column id="IDC288" populated="true" UUID="fc7528d5-7293-4f4e-8b86-4035f422ffe3" ascendingOrDescending="ASCENDING" column-ref="COL258" name="aeronave_matricula" physicalName="aeronave_matricula" />
+    </index>
+    <index id="IDX289" populated="true" UUID="57878fb6-478a-4fc6-86eb-6e64486367dc" clustered="false" name="idx_dim_aeronave_tk" physicalName="idx_dim_aeronave_tk" primaryKeyIndex="false" unique="false" >
+     <index-column id="IDC290" populated="true" UUID="6008fb60-5e7b-4c50-bba6-ff3c16d13946" ascendingOrDescending="ASCENDING" column-ref="COL253" name="i_dim_aeronave_sk" physicalName="i_dim_aeronave_sk" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB291" populated="true" UUID="1431e74e-47bc-4bb2-9ae1-366c0ed6eec5" name="dim_data" objectType="TABLE" physicalName="dim_data" >
+   <remarks></remarks>
+   <folder id="FOLTAB2911" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL292" populated="true" UUID="3667a1c6-9201-4a77-a8a0-983839589358" autoIncrement="false" defaultValue="" name="date_sk" nullable="1" physicalName="date_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL44" sourceDataTypeName="float8" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
+     <remarks></remarks>
+    </column>
+    <column id="COL293" populated="true" UUID="3f1cb44d-5209-4d13-a8b5-fadeb9f82686" autoIncrement="false" defaultValue="" name="year_number" nullable="1" physicalName="year_number" precision="0" referenceCount="1" scale="0" source-column-ref="COL45" sourceDataTypeName="int2" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks></remarks>
+    </column>
+    <column id="COL294" populated="true" UUID="3ff0eb29-19e1-45dd-9807-871854e5d11c" autoIncrement="false" defaultValue="" name="month_number" nullable="1" physicalName="month_number" precision="0" referenceCount="1" scale="0" source-column-ref="COL46" sourceDataTypeName="int2" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks></remarks>
+    </column>
+    <column id="COL295" populated="true" UUID="50391050-ee01-45db-a496-abbc65f805f2" autoIncrement="false" defaultValue="" name="day_of_year_number" nullable="1" physicalName="day_of_year_number" precision="0" referenceCount="1" scale="0" source-column-ref="COL47" sourceDataTypeName="int2" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks></remarks>
+    </column>
+    <column id="COL296" populated="true" UUID="c06b9471-054b-4dd1-a26c-cd1ad734dcc8" autoIncrement="false" defaultValue="" name="day_of_month_number" nullable="1" physicalName="day_of_month_number" precision="0" referenceCount="1" scale="0" source-column-ref="COL48" sourceDataTypeName="int2" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks></remarks>
+    </column>
+    <column id="COL297" populated="true" UUID="b3605b0a-15a0-4030-a2d7-c91491a48b2e" autoIncrement="false" defaultValue="" name="day_of_week_number" nullable="1" physicalName="day_of_week_number" precision="0" referenceCount="1" scale="0" source-column-ref="COL49" sourceDataTypeName="int2" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks></remarks>
+    </column>
+    <column id="COL298" populated="true" UUID="96101b8d-31c7-418c-925d-f6ec8cb26723" autoIncrement="false" defaultValue="" name="week_of_year_number" nullable="1" physicalName="week_of_year_number" precision="0" referenceCount="1" scale="0" source-column-ref="COL50" sourceDataTypeName="int2" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks></remarks>
+    </column>
+    <column id="COL299" populated="true" UUID="4a28db54-db78-4090-bf74-96512b6ffbcd" autoIncrement="false" defaultValue="" name="day_name" nullable="1" physicalName="day_name" precision="30" referenceCount="1" scale="0" source-column-ref="COL51" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL300" populated="true" UUID="63340e83-044c-4001-9ebd-1f1848ec47ab" autoIncrement="false" defaultValue="" name="month_name" nullable="1" physicalName="month_name" precision="30" referenceCount="1" scale="0" source-column-ref="COL52" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL301" populated="true" UUID="9e1ba979-abda-494d-8e56-b28e5ebbadb6" autoIncrement="false" defaultValue="" name="quarter_number" nullable="1" physicalName="quarter_number" precision="0" referenceCount="1" scale="0" source-column-ref="COL53" sourceDataTypeName="float8" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
+     <remarks></remarks>
+    </column>
+    <column id="COL302" populated="true" UUID="0f66d3f4-963c-4b7e-9b1f-38920e9f847d" autoIncrement="false" defaultValue="" name="quarter_name" nullable="1" physicalName="quarter_name" precision="2" referenceCount="1" scale="0" source-column-ref="COL54" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL303" populated="true" UUID="f604f173-0a2e-469b-9aa3-84d13ffdea55" autoIncrement="false" defaultValue="" name="year_quarter_name" nullable="1" physicalName="year_quarter_name" precision="32" referenceCount="1" scale="0" source-column-ref="COL55" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL304" populated="true" UUID="fa638bf3-6868-49a3-96e8-6cee8c1e8d78" autoIncrement="false" defaultValue="" name="weekend_ind" nullable="1" physicalName="weekend_ind" precision="1" referenceCount="1" scale="0" source-column-ref="COL56" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL305" populated="true" UUID="bf0ed744-c523-4877-9012-02f8c6d54731" autoIncrement="false" defaultValue="" name="days_in_month_qty" nullable="1" physicalName="days_in_month_qty" precision="0" referenceCount="1" scale="0" source-column-ref="COL57" sourceDataTypeName="int2" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks></remarks>
+    </column>
+    <column id="COL306" populated="true" UUID="50f6ea3e-5b92-4712-87d7-a236f4d1af8c" autoIncrement="false" defaultValue="" name="day_desc" nullable="1" physicalName="day_desc" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL58" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL307" populated="true" UUID="5365731a-058d-45c5-8ff3-3c0bd568753f" autoIncrement="false" defaultValue="" name="week_sk" nullable="1" physicalName="week_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL59" sourceDataTypeName="float8" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
+     <remarks></remarks>
+    </column>
+    <column id="COL308" populated="true" UUID="0564383d-bc5a-495e-a526-51b161c72200" autoIncrement="false" defaultValue="" name="day_date" nullable="1" physicalName="day_date" precision="0" referenceCount="1" scale="0" source-column-ref="COL60" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    <column id="COL309" populated="true" UUID="c7fbf31a-6cea-4e64-9133-13b750af1364" autoIncrement="false" defaultValue="" name="week_name" nullable="1" physicalName="week_name" precision="32" referenceCount="1" scale="0" source-column-ref="COL61" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL310" populated="true" UUID="a45037a9-f3df-4035-a5d9-a2ed1beabb36" autoIncrement="false" defaultValue="" name="week_of_month_number" nullable="1" physicalName="week_of_month_number" precision="0" referenceCount="1" scale="0" source-column-ref="COL62" sourceDataTypeName="float8" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
+     <remarks></remarks>
+    </column>
+    <column id="COL311" populated="true" UUID="4c8eda22-27c0-4f95-b867-27e2a173df17" autoIncrement="false" defaultValue="" name="week_of_month_name" nullable="1" physicalName="week_of_month_name" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL63" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL312" populated="true" UUID="17d4a548-83a0-42c8-bf71-73bfbd99e879" autoIncrement="false" defaultValue="" name="month_sk" nullable="1" physicalName="month_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL64" sourceDataTypeName="float8" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
+     <remarks></remarks>
+    </column>
+    <column id="COL313" populated="true" UUID="feb53e4a-5224-484f-b874-45419e5eaafd" autoIncrement="false" defaultValue="" name="quarter_sk" nullable="1" physicalName="quarter_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL65" sourceDataTypeName="float8" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
+     <remarks></remarks>
+    </column>
+    <column id="COL314" populated="true" UUID="eeb492fa-9763-402f-9db5-fef515d610bc" autoIncrement="false" defaultValue="" name="year_sk" nullable="1" physicalName="year_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL66" sourceDataTypeName="float8" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
+     <remarks></remarks>
+    </column>
+    <column id="COL315" populated="true" UUID="0969cf56-a333-47bb-8b11-1a208d5715a8" autoIncrement="false" defaultValue="" name="year_sort_number" nullable="1" physicalName="year_sort_number" precision="4" referenceCount="1" scale="0" source-column-ref="COL67" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL316" populated="true" UUID="645acd36-bfb6-4c6c-ab8f-80396feb1c97" autoIncrement="false" defaultValue="" name="day_of_week_sort_name" nullable="1" physicalName="day_of_week_sort_name" precision="60" referenceCount="1" scale="0" source-column-ref="COL68" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL317" populated="true" UUID="db0abf3d-365a-4aa8-bcaa-2b6f9923f468" autoIncrement="false" defaultValue="" name="aa" nullable="1" physicalName="aa" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL69" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL318" populated="true" UUID="c12a3a11-3f17-47bb-a559-5875fb852343" autoIncrement="false" defaultValue="" name="mm" nullable="1" physicalName="mm" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL70" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL319" populated="true" UUID="27425131-a1d1-447f-8004-f080a9774eec" autoIncrement="false" defaultValue="" name="dd" nullable="1" physicalName="dd" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL71" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL320" populated="true" UUID="3bdcef78-ceb1-4ea0-9438-eb141955f5bb" autoIncrement="false" defaultValue="" name="aammdd" nullable="1" physicalName="aammdd" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL72" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL321" populated="true" UUID="111a7515-2c0f-43ca-ab67-886d5e5aaa46" autoIncrement="false" defaultValue="" name="mmaa" nullable="1" physicalName="mmaa" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL73" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL322" populated="true" UUID="1ed557c0-33f4-4575-bf21-542628528f78" autoIncrement="false" defaultValue="" name="ddmmaaa" nullable="1" physicalName="ddmmaaa" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL74" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL323" populated="true" UUID="0eccda39-0181-4f0d-b13f-0018dec362ad" autoIncrement="false" defaultValue="" name="competencia" nullable="1" physicalName="competencia" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL75" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL324" populated="true" UUID="3ed04c30-1052-4a51-9c82-7ad2fc2b6ef3" autoIncrement="false" defaultValue="" name="anostring" nullable="1" physicalName="anostring" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL76" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL325" populated="true" UUID="00bdb6fc-3083-48b1-9234-cf8c2e9199c6" autoIncrement="false" defaultValue="" name="milestone" nullable="1" physicalName="milestone" precision="20" referenceCount="1" scale="0" source-column-ref="COL77" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL326" populated="true" UUID="5a0a8fff-2a94-4f34-86a7-a71d62cb88f6" autoIncrement="false" defaultValue="" name="prescricao" nullable="1" physicalName="prescricao" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL78" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB2913" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB2912" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB2914" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX327" populated="true" UUID="995864fb-92b7-4a06-8ae8-cf1ab47548c0" clustered="false" name="dim_data_pk" physicalName="dim_data_pk" primaryKeyIndex="true" unique="false" >
+    </index>
+    <index id="IDX328" populated="true" UUID="78be9a0b-12b6-4087-b27f-034b5d9979d7" clustered="false" name="idx_dim_data_lookup" physicalName="idx_dim_data_lookup" primaryKeyIndex="false" unique="false" >
+     <index-column id="IDC329" populated="true" UUID="5bc50543-8876-4dfb-9064-c8a675d33e0c" ascendingOrDescending="ASCENDING" column-ref="COL292" name="date_sk" physicalName="date_sk" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB330" populated="true" UUID="0fa9e841-e9f2-43eb-a591-a82448396349" name="dim_especie" objectType="TABLE" physicalName="dim_especie" >
+   <remarks></remarks>
+   <folder id="FOLTAB3301" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL331" populated="true" UUID="c416aec3-ce81-403c-aa20-7364c814d66d" autoIncrement="true" defaultValue="nextval(&apos;dim_especie_i_dim_especie_sk_seq&apos;::regclass)" name="i_dim_especie_sk" nullable="0" physicalName="i_dim_especie_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL83" sourceDataTypeName="bigserial" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    <column id="COL332" populated="true" UUID="03b4eae5-6a95-46f9-9cb6-ef08d4e6e273" autoIncrement="false" defaultValue="" name="version" nullable="1" physicalName="version" precision="0" referenceCount="1" scale="0" source-column-ref="COL84" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL333" populated="true" UUID="824f5d9c-5870-4851-a0c0-b063d59fc811" autoIncrement="false" defaultValue="" name="date_from" nullable="1" physicalName="date_from" precision="0" referenceCount="1" scale="0" source-column-ref="COL85" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    <column id="COL334" populated="true" UUID="4f2b890b-ef52-4595-ba55-2ed43b7f9f4c" autoIncrement="false" defaultValue="" name="date_to" nullable="1" physicalName="date_to" precision="0" referenceCount="1" scale="0" source-column-ref="COL86" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    <column id="COL335" populated="true" UUID="f62c8c12-3da8-4817-93a5-f6f9126eb7b3" autoIncrement="false" defaultValue="" name="codigoreporteespecies" nullable="1" physicalName="codigoreporteespecies" precision="0" referenceCount="1" scale="0" source-column-ref="COL87" sourceDataTypeName="int8" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    <column id="COL336" populated="true" UUID="2eaf79a3-abed-4ae8-bbe4-8ff9d92158d0" autoIncrement="false" defaultValue="" name="especie" nullable="1" physicalName="especie" precision="176" referenceCount="1" scale="0" source-column-ref="COL88" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB3303" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB3302" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB3304" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX337" populated="true" UUID="15b6e2f6-71fe-4e63-9112-2557fe65e65c" clustered="false" name="dim_especie_pk" physicalName="dim_especie_pk" primaryKeyIndex="true" unique="false" >
+    </index>
+    <index id="IDX338" populated="true" UUID="33649c55-89f4-4314-aa26-a52ceea1f73c" clustered="false" name="idx_dim_especie_lookup" physicalName="idx_dim_especie_lookup" primaryKeyIndex="false" unique="false" >
+     <index-column id="IDC339" populated="true" UUID="762d6392-df49-4d3c-83e4-22789f3a44d7" ascendingOrDescending="ASCENDING" column-ref="COL335" name="codigoreporteespecies" physicalName="codigoreporteespecies" />
+    </index>
+    <index id="IDX340" populated="true" UUID="9fbf8413-8c56-4d73-bb39-01d306e56583" clustered="false" name="idx_dim_especie_tk" physicalName="idx_dim_especie_tk" primaryKeyIndex="false" unique="false" >
+     <index-column id="IDC341" populated="true" UUID="8b32a056-5208-449d-877b-ef29d7765bbb" ascendingOrDescending="ASCENDING" column-ref="COL331" name="i_dim_especie_sk" physicalName="i_dim_especie_sk" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB342" populated="true" UUID="f505ee6f-335d-486b-a985-18a53f264cef" name="dim_junk_aeronave_ocorrencia" objectType="TABLE" physicalName="dim_junk_aeronave_ocorrencia" sql-exception="java.lang.IllegalStateException: Can&apos;t populate indices because it already contains children!" >
+   <remarks></remarks>
+   <folder id="FOLTAB3421" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL343" populated="true" UUID="5711132a-6569-4a4f-92b3-2e17591b654b" autoIncrement="true" defaultValue="nextval(&apos;dim_junk_aeronave_ocorrencia_i_junk_aeronave_ocorrencia_sk_seq&apos;::regclass)" name="i_junk_aeronave_ocorrencia_sk" nullable="0" physicalName="i_junk_aeronave_ocorrencia_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL95" sourceDataTypeName="bigserial" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    <column id="COL344" populated="true" UUID="cad36b39-dce7-4728-af67-696e00d3aadf" autoIncrement="false" defaultValue="" name="ocorrencia_classificacao" nullable="1" physicalName="ocorrencia_classificacao" precision="15" referenceCount="1" scale="0" source-column-ref="COL96" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL345" populated="true" UUID="df1a0592-f159-4ad7-91a4-eda574154f76" autoIncrement="false" defaultValue="" name="ocorrencia_tipo" nullable="1" physicalName="ocorrencia_tipo" precision="100" referenceCount="1" scale="0" source-column-ref="COL97" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL346" populated="true" UUID="9ca5d243-2594-4097-acb3-0faeb31852f7" autoIncrement="false" defaultValue="" name="ocorrencia_tipo_categoria" nullable="1" physicalName="ocorrencia_tipo_categoria" precision="200" referenceCount="1" scale="0" source-column-ref="COL98" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL347" populated="true" UUID="cfa69003-0e25-405f-b70b-5fdc58b866a5" autoIncrement="false" defaultValue="" name="taxonomia_tipo_icao" nullable="1" physicalName="taxonomia_tipo_icao" precision="26" referenceCount="1" scale="0" source-column-ref="COL99" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL348" populated="true" UUID="17494b04-c7ea-45d7-9dd5-c65e79545282" autoIncrement="false" defaultValue="" name="classificacao_ocorrencia" nullable="1" physicalName="classificacao_ocorrencia" precision="29" referenceCount="1" scale="0" source-column-ref="COL100" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL349" populated="true" UUID="14b3bf35-64f5-46d0-ab9a-cd6f9ec11af1" autoIncrement="false" defaultValue="" name="tipo_reporte" nullable="1" physicalName="tipo_reporte" precision="13" referenceCount="1" scale="0" source-column-ref="COL101" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL350" populated="true" UUID="74aaf4ae-50f6-404c-9af4-7051df2595f6" autoIncrement="false" defaultValue="" name="aviaco_tipo" nullable="1" physicalName="aviaco_tipo" precision="12" referenceCount="1" scale="0" source-column-ref="COL102" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB3423" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB3422" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB3424" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX351" populated="true" UUID="bf14fdc3-a1ff-4242-9989-3b674c57f6bc" clustered="false" name="dim_junk_aeronave_ocorrencia_pk" physicalName="dim_junk_aeronave_ocorrencia_pk" primaryKeyIndex="true" unique="false" >
+    </index>
+    <index id="IDX352" populated="true" UUID="a42b4a85-5aa2-462a-87be-50cbce46ebb0" clustered="false" name="idx_dim_junk_aeronave_ocorrencia_pk" physicalName="idx_dim_junk_aeronave_ocorrencia_pk" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC353" populated="true" UUID="a05e70d6-e4ed-475a-bc5a-77e5ccdb7d2d" ascendingOrDescending="ASCENDING" column-ref="COL343" name="i_junk_aeronave_ocorrencia_sk" physicalName="i_junk_aeronave_ocorrencia_sk" />
+    </index>
+    <index id="IDX354" populated="true" UUID="c5cd6274-e4d7-4417-b24a-580f1066ce2b" clustered="false" name="idx_dim_junk_aeronave_ocorrencia_lookup" physicalName="idx_dim_junk_aeronave_ocorrencia_lookup" primaryKeyIndex="false" unique="false" >
+     <index-column id="IDC355" populated="true" UUID="ca933564-64f3-4820-95e8-9725786c59a4" ascendingOrDescending="ASCENDING" column-ref="COL344" name="ocorrencia_classificacao" physicalName="ocorrencia_classificacao" />
+     <index-column id="IDC356" populated="true" UUID="b016435a-8244-4604-96fb-54535bc1508e" ascendingOrDescending="ASCENDING" column-ref="COL345" name="ocorrencia_tipo" physicalName="ocorrencia_tipo" />
+     <index-column id="IDC357" populated="true" UUID="44423aa0-40fb-4e88-bd63-92e5e9022c38" ascendingOrDescending="ASCENDING" column-ref="COL346" name="ocorrencia_tipo_categoria" physicalName="ocorrencia_tipo_categoria" />
+     <index-column id="IDC358" populated="true" UUID="79db2f9a-2e3a-44b6-aa64-895946b0f055" ascendingOrDescending="ASCENDING" column-ref="COL347" name="taxonomia_tipo_icao" physicalName="taxonomia_tipo_icao" />
+     <index-column id="IDC359" populated="true" UUID="b62e6696-0645-432e-b64b-d0151522e354" ascendingOrDescending="ASCENDING" column-ref="COL348" name="classificacao_ocorrencia" physicalName="classificacao_ocorrencia" />
+     <index-column id="IDC360" populated="true" UUID="ebdf3aaa-f55f-4ae4-a4d3-cdba2d3d5a7a" ascendingOrDescending="ASCENDING" column-ref="COL349" name="tipo_reporte" physicalName="tipo_reporte" />
+     <index-column id="IDC361" populated="true" UUID="b18ee8ab-05bb-4a82-8876-9a42d1529d12" ascendingOrDescending="ASCENDING" column-ref="COL350" name="aviaco_tipo" physicalName="aviaco_tipo" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB362" populated="true" UUID="d3614d0b-bd53-440c-aa9e-74067b8aedab" name="dim_localidade" objectType="TABLE" physicalName="dim_localidade" >
+   <remarks></remarks>
+   <folder id="FOLTAB3621" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL363" populated="true" UUID="dc4ac62e-275e-4628-b9f8-b6ad1d340675" autoIncrement="true" defaultValue="nextval(&apos;dim_localidade_i_dim_localidade_sk_seq&apos;::regclass)" name="i_dim_localidade_sk" nullable="0" physicalName="i_dim_localidade_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL115" sourceDataTypeName="bigserial" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    <column id="COL364" populated="true" UUID="4dde2a44-037c-4bce-b6e9-d00c0b308ed0" autoIncrement="false" defaultValue="" name="ocorrencia_latitude" nullable="1" physicalName="ocorrencia_latitude" precision="31" referenceCount="1" scale="0" source-column-ref="COL116" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL365" populated="true" UUID="391f4329-008a-45f3-894f-5430ccdfe0c5" autoIncrement="false" defaultValue="" name="ocorrencia_longitude" nullable="1" physicalName="ocorrencia_longitude" precision="31" referenceCount="1" scale="0" source-column-ref="COL117" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL366" populated="true" UUID="2bf14d71-1023-4ddf-8a2f-9f420bc62434" autoIncrement="false" defaultValue="" name="ocorrencia_cidade" nullable="1" physicalName="ocorrencia_cidade" precision="50" referenceCount="1" scale="0" source-column-ref="COL118" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL367" populated="true" UUID="37a5dc55-b2c6-41ca-8c8f-696eb3889a67" autoIncrement="false" defaultValue="" name="ocorrencia_uf" nullable="1" physicalName="ocorrencia_uf" precision="22" referenceCount="1" scale="0" source-column-ref="COL119" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL368" populated="true" UUID="b5a88d02-d788-4765-bcfe-9998364e8b7b" autoIncrement="false" defaultValue="" name="ocorrencia_pais" nullable="1" physicalName="ocorrencia_pais" precision="26" referenceCount="1" scale="0" source-column-ref="COL120" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL369" populated="true" UUID="8c2cd409-9eb2-4a45-9576-4c3dbab5471f" autoIncrement="false" defaultValue="" name="ocorrencia_aerodromo" nullable="1" physicalName="ocorrencia_aerodromo" precision="25" referenceCount="1" scale="0" source-column-ref="COL121" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB3623" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB3622" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB3624" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX370" populated="true" UUID="eb6d269b-9872-4a3a-9e20-4fc3d1cd812e" clustered="false" name="dim_localidade_pk" physicalName="dim_localidade_pk" primaryKeyIndex="true" unique="false" >
+    </index>
+    <index id="IDX371" populated="true" UUID="428dfcff-1877-4b27-96e9-134c4e92424f" clustered="false" name="idx_dim_localidade_pk" physicalName="idx_dim_localidade_pk" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC372" populated="true" UUID="1e7357e9-9ffb-499d-b5c7-0935cdbe7c37" ascendingOrDescending="ASCENDING" column-ref="COL363" name="i_dim_localidade_sk" physicalName="i_dim_localidade_sk" />
+    </index>
+    <index id="IDX373" populated="true" UUID="3a1fdb72-0bcb-4f1a-b957-57bb787e1cbb" clustered="false" name="idx_dim_localidade_lookup" physicalName="idx_dim_localidade_lookup" primaryKeyIndex="false" unique="false" >
+     <index-column id="IDC374" populated="true" UUID="77163de7-dd15-4647-b1a7-316f6e277543" ascendingOrDescending="ASCENDING" column-ref="COL364" name="ocorrencia_latitude" physicalName="ocorrencia_latitude" />
+     <index-column id="IDC375" populated="true" UUID="90681f0b-6fd3-4d71-b9fa-ac0e41b07bb9" ascendingOrDescending="ASCENDING" column-ref="COL365" name="ocorrencia_longitude" physicalName="ocorrencia_longitude" />
+     <index-column id="IDC376" populated="true" UUID="5f2ce99f-cff6-4659-8f5d-ebeab4ab1fc7" ascendingOrDescending="ASCENDING" column-ref="COL366" name="ocorrencia_cidade" physicalName="ocorrencia_cidade" />
+     <index-column id="IDC377" populated="true" UUID="065929df-89f0-460d-9932-e9cff23932d0" ascendingOrDescending="ASCENDING" column-ref="COL367" name="ocorrencia_uf" physicalName="ocorrencia_uf" />
+     <index-column id="IDC378" populated="true" UUID="d5c2f9b2-8acb-45ee-a21b-b37f9a804c94" ascendingOrDescending="ASCENDING" column-ref="COL368" name="ocorrencia_pais" physicalName="ocorrencia_pais" />
+     <index-column id="IDC379" populated="true" UUID="c5234ef7-fa61-4d2f-9686-bf5d71948c6f" ascendingOrDescending="ASCENDING" column-ref="COL369" name="ocorrencia_aerodromo" physicalName="ocorrencia_aerodromo" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB380" populated="true" UUID="509f934e-0ac6-456a-8eeb-5489f2721c9f" name="dim_ocorrencia_aeronave" objectType="TABLE" physicalName="dim_ocorrencia_aeronave" >
+   <remarks></remarks>
+   <folder id="FOLTAB3801" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL381" populated="true" UUID="10247718-4d0c-45b8-a3ed-56687a24c51d" autoIncrement="true" defaultValue="nextval(&apos;dim_ocorrencia_aeronave_i_dim_ocorrencia_aeronave_sk_seq&apos;::regclass)" name="i_dim_ocorrencia_aeronave_sk" nullable="0" physicalName="i_dim_ocorrencia_aeronave_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL133" sourceDataTypeName="bigserial" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+     <remarks></remarks>
+    </column>
+    <column id="COL382" populated="true" UUID="3fc47350-89ef-494b-8060-76f6e7378d27" autoIncrement="false" defaultValue="" name="version" nullable="1" physicalName="version" precision="0" referenceCount="1" scale="0" source-column-ref="COL134" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL383" populated="true" UUID="e5bca4e6-ed9f-4ba1-a95c-4414c799384a" autoIncrement="false" defaultValue="" name="date_from" nullable="1" physicalName="date_from" precision="0" referenceCount="1" scale="0" source-column-ref="COL135" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    <column id="COL384" populated="true" UUID="cb19996a-f402-4582-93c0-89ac180b4786" autoIncrement="false" defaultValue="" name="date_to" nullable="1" physicalName="date_to" precision="0" referenceCount="1" scale="0" source-column-ref="COL136" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    <column id="COL385" populated="true" UUID="ed7a1859-0f51-4359-829b-65710ec1312b" autoIncrement="false" defaultValue="" name="codigo_ocorrencia1" nullable="1" physicalName="codigo_ocorrencia1" precision="15" referenceCount="1" scale="0" source-column-ref="COL137" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL386" populated="true" UUID="17043f68-a890-4540-9bf2-25c7101c9783" autoIncrement="false" defaultValue="" name="investigacao_aeronave_liberada" nullable="1" physicalName="investigacao_aeronave_liberada" precision="28" referenceCount="1" scale="0" source-column-ref="COL138" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL387" populated="true" UUID="6e7d7773-5e53-4909-a802-0ef8e6539388" autoIncrement="false" defaultValue="" name="investigacao_status" nullable="1" physicalName="investigacao_status" precision="10" referenceCount="1" scale="0" source-column-ref="COL139" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL388" populated="true" UUID="3095f656-ae48-44c0-9e8b-f50bca8605a8" autoIncrement="false" defaultValue="" name="divulgacao_relatorio_numero" nullable="1" physicalName="divulgacao_relatorio_numero" precision="38" referenceCount="1" scale="0" source-column-ref="COL140" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL389" populated="true" UUID="080ce31f-b42e-4504-9188-725e693d05c6" autoIncrement="false" defaultValue="" name="divulgacao_relatorio_publicado" nullable="1" physicalName="divulgacao_relatorio_publicado" precision="34" referenceCount="1" scale="0" source-column-ref="COL141" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL390" populated="true" UUID="d768282a-67fa-4b42-86d1-79b39aaafaac" autoIncrement="false" defaultValue="" name="ocorrencia_saida_pista" nullable="1" physicalName="ocorrencia_saida_pista" precision="23" referenceCount="1" scale="0" source-column-ref="COL142" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL391" populated="true" UUID="e4304ede-54c5-4104-813e-3be275212f39" autoIncrement="false" defaultValue="" name="recomendacao_numero" nullable="1" physicalName="recomendacao_numero" precision="38" referenceCount="1" scale="0" source-column-ref="COL143" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL392" populated="true" UUID="adc4e0f8-270c-47cd-a5af-27edb73b887a" autoIncrement="false" defaultValue="" name="recomendacao_dia_assinatura" nullable="1" physicalName="recomendacao_dia_assinatura" precision="0" referenceCount="1" scale="0" source-column-ref="COL144" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL393" populated="true" UUID="51b22130-25d0-4f5e-8fe8-589ef1e7ed35" autoIncrement="false" defaultValue="" name="recomendacao_dia_encaminhamento" nullable="1" physicalName="recomendacao_dia_encaminhamento" precision="0" referenceCount="1" scale="0" source-column-ref="COL145" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL394" populated="true" UUID="f1df6c48-72e6-42fb-853f-1468088faa6f" autoIncrement="false" defaultValue="" name="recomendacao_dia_feedback" nullable="1" physicalName="recomendacao_dia_feedback" precision="0" referenceCount="1" scale="0" source-column-ref="COL146" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL395" populated="true" UUID="b10c7dc9-44b5-4218-970f-8af01f60ab1c" autoIncrement="false" defaultValue="" name="recomendacao_conteudo" nullable="1" physicalName="recomendacao_conteudo" precision="1000" referenceCount="1" scale="0" source-column-ref="COL147" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL396" populated="true" UUID="84345efe-4a36-440d-9293-f2ad30dc2008" autoIncrement="false" defaultValue="" name="recomendacao_status" nullable="1" physicalName="recomendacao_status" precision="29" referenceCount="1" scale="0" source-column-ref="COL148" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL397" populated="true" UUID="027272aa-8df5-4294-bf4c-a6382bc28daa" autoIncrement="false" defaultValue="" name="recomendacao_destinatario_sigla" nullable="1" physicalName="recomendacao_destinatario_sigla" precision="28" referenceCount="1" scale="0" source-column-ref="COL149" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL398" populated="true" UUID="125c0c9f-56bf-427e-8568-13292f37040a" autoIncrement="false" defaultValue="" name="recomendacao_destinatario" nullable="1" physicalName="recomendacao_destinatario" precision="79" referenceCount="1" scale="0" source-column-ref="COL150" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL399" populated="true" UUID="660bd359-90b6-4399-a933-969ce42dd4e3" autoIncrement="false" defaultValue="" name="status" nullable="1" physicalName="status" precision="47" referenceCount="1" scale="0" source-column-ref="COL151" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL400" populated="true" UUID="cd7dcc6c-4c54-4168-b697-73a7d7b4a6b4" autoIncrement="false" defaultValue="" name="operador" nullable="1" physicalName="operador" precision="34" referenceCount="1" scale="0" source-column-ref="COL152" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL401" populated="true" UUID="8afab33b-b07d-4eff-8b00-ea77c6a57d2e" autoIncrement="false" defaultValue="" name="periodo_dia" nullable="1" physicalName="periodo_dia" precision="28" referenceCount="1" scale="0" source-column-ref="COL153" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL402" populated="true" UUID="61128b0a-d9d6-4fb5-bc28-869ca6851530" autoIncrement="false" defaultValue="" name="icao" nullable="1" physicalName="icao" precision="44" referenceCount="1" scale="0" source-column-ref="COL154" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL403" populated="true" UUID="a502034c-7a50-49a6-a914-898680374b43" autoIncrement="false" defaultValue="" name="pista" nullable="1" physicalName="pista" precision="25" referenceCount="1" scale="0" source-column-ref="COL155" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL404" populated="true" UUID="e1c4ad96-961a-43b9-bf9a-aafd91d23502" autoIncrement="false" defaultValue="" name="lado" nullable="1" physicalName="lado" precision="10" referenceCount="1" scale="0" source-column-ref="COL156" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL405" populated="true" UUID="49c2a95d-9f46-470e-b62b-35fe5f39b4b2" autoIncrement="false" defaultValue="" name="asa" nullable="1" physicalName="asa" precision="23" referenceCount="1" scale="0" source-column-ref="COL157" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL406" populated="true" UUID="2b96863f-d013-4679-a8aa-9a0530464946" autoIncrement="false" defaultValue="" name="coordenada_radial" nullable="1" physicalName="coordenada_radial" precision="97" referenceCount="1" scale="0" source-column-ref="COL158" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL407" populated="true" UUID="f69a13d5-9612-4a93-a4ec-3a02566000da" autoIncrement="false" defaultValue="" name="altura" nullable="1" physicalName="altura" precision="25" referenceCount="1" scale="0" source-column-ref="COL159" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL408" populated="true" UUID="d52e59fc-da0f-48f3-b6c4-af95375eef57" autoIncrement="false" defaultValue="" name="velocidade" nullable="1" physicalName="velocidade" precision="15" referenceCount="1" scale="0" source-column-ref="COL160" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL409" populated="true" UUID="9ba1494b-9b3f-4826-bcb6-f7881c19723d" autoIncrement="false" defaultValue="" name="fase_voo" nullable="1" physicalName="fase_voo" precision="29" referenceCount="1" scale="0" source-column-ref="COL161" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL410" populated="true" UUID="597ad58b-3f86-41bf-ad31-08456e052ae0" autoIncrement="false" defaultValue="" name="efeito_voo" nullable="1" physicalName="efeito_voo" precision="71" referenceCount="1" scale="0" source-column-ref="COL162" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL411" populated="true" UUID="98cc8c55-bb3c-4f43-a761-5358ad2d6423" autoIncrement="false" defaultValue="" name="condicao_ceu" nullable="1" physicalName="condicao_ceu" precision="13" referenceCount="1" scale="0" source-column-ref="COL163" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL412" populated="true" UUID="2856e6d2-8697-4176-a4a2-9a2d155e95cd" autoIncrement="false" defaultValue="" name="visibilidade" nullable="1" physicalName="visibilidade" precision="28" referenceCount="1" scale="0" source-column-ref="COL164" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL413" populated="true" UUID="96e4ac9d-3f4a-4788-be6c-4d7c11799279" autoIncrement="false" defaultValue="" name="precipitacao" nullable="1" physicalName="precipitacao" precision="45" referenceCount="1" scale="0" source-column-ref="COL165" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL414" populated="true" UUID="deae305b-3750-4c89-8032-c682e28f2a8a" autoIncrement="false" defaultValue="" name="danos_prejuizo" nullable="1" physicalName="danos_prejuizo" precision="13" referenceCount="1" scale="0" source-column-ref="COL166" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL415" populated="true" UUID="9f2af445-b941-4d52-8a11-b2e96cbe2fc5" autoIncrement="false" defaultValue="" name="indisponibilidade_anv" nullable="1" physicalName="indisponibilidade_anv" precision="47" referenceCount="1" scale="0" source-column-ref="COL167" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL416" populated="true" UUID="bb53912f-f24b-43da-a046-587e196bf8e6" autoIncrement="false" defaultValue="" name="piloto_alertado" nullable="1" physicalName="piloto_alertado" precision="10" referenceCount="1" scale="0" source-column-ref="COL168" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL417" populated="true" UUID="567baea3-467f-4f1c-9cdd-eeec7f41d01b" autoIncrement="false" defaultValue="" name="atingida1" nullable="1" physicalName="atingida1" precision="35" referenceCount="1" scale="0" source-column-ref="COL169" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL418" populated="true" UUID="cf74b058-2b8f-4bea-b56c-7f2fa0690283" autoIncrement="false" defaultValue="" name="atingida2" nullable="1" physicalName="atingida2" precision="19" referenceCount="1" scale="0" source-column-ref="COL170" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL419" populated="true" UUID="778b8b51-2d7e-48d6-9671-51698c5add38" autoIncrement="false" defaultValue="" name="atingida3" nullable="1" physicalName="atingida3" precision="30" referenceCount="1" scale="0" source-column-ref="COL171" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL420" populated="true" UUID="cb1747d5-4bb5-4f0c-8055-58c0243eddbf" autoIncrement="false" defaultValue="" name="atingida4" nullable="1" physicalName="atingida4" precision="21" referenceCount="1" scale="0" source-column-ref="COL172" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL421" populated="true" UUID="f1ff3c0f-6e12-4a63-bdc8-7935974f8218" autoIncrement="false" defaultValue="" name="atingida5" nullable="1" physicalName="atingida5" precision="21" referenceCount="1" scale="0" source-column-ref="COL173" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL422" populated="true" UUID="1649604c-81e2-4d94-9467-2796bcdfc184" autoIncrement="false" defaultValue="" name="atingida6" nullable="1" physicalName="atingida6" precision="31" referenceCount="1" scale="0" source-column-ref="COL174" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL423" populated="true" UUID="bc5dcf59-88d2-4566-b79e-449ddfd53cc4" autoIncrement="false" defaultValue="" name="atingida7" nullable="1" physicalName="atingida7" precision="30" referenceCount="1" scale="0" source-column-ref="COL175" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL424" populated="true" UUID="b79eb71b-0cd7-434b-95e0-fcd1f39a5fd0" autoIncrement="false" defaultValue="" name="atingida8" nullable="1" physicalName="atingida8" precision="22" referenceCount="1" scale="0" source-column-ref="COL176" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL425" populated="true" UUID="24df7191-87b9-4c0e-a64a-fe44faafc652" autoIncrement="false" defaultValue="" name="atingida9" nullable="1" physicalName="atingida9" precision="23" referenceCount="1" scale="0" source-column-ref="COL177" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL426" populated="true" UUID="f62e2bd6-f52c-4dc6-a562-cbc09cfa11dd" autoIncrement="false" defaultValue="" name="atingida10" nullable="1" physicalName="atingida10" precision="25" referenceCount="1" scale="0" source-column-ref="COL178" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL427" populated="true" UUID="adbc43b4-2c71-4d56-bc23-df6669cb8d37" autoIncrement="false" defaultValue="" name="atingida11" nullable="1" physicalName="atingida11" precision="13" referenceCount="1" scale="0" source-column-ref="COL179" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL428" populated="true" UUID="cc637cdd-9e3d-4068-b570-2e5469b4c84d" autoIncrement="false" defaultValue="" name="danificado1" nullable="1" physicalName="danificado1" precision="25" referenceCount="1" scale="0" source-column-ref="COL180" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL429" populated="true" UUID="67422dfd-3bfb-4b15-856e-5779b662d84a" autoIncrement="false" defaultValue="" name="danificado2" nullable="1" physicalName="danificado2" precision="21" referenceCount="1" scale="0" source-column-ref="COL181" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL430" populated="true" UUID="e5a7f4e7-67da-4668-ada4-c3b5f5bc6941" autoIncrement="false" defaultValue="" name="danificado3" nullable="1" physicalName="danificado3" precision="25" referenceCount="1" scale="0" source-column-ref="COL182" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL431" populated="true" UUID="661dc480-b8f0-4e9d-b230-dca103e00e5e" autoIncrement="false" defaultValue="" name="danificado4" nullable="1" physicalName="danificado4" precision="23" referenceCount="1" scale="0" source-column-ref="COL183" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL432" populated="true" UUID="d527b989-5e64-477c-b148-76c3449365d8" autoIncrement="false" defaultValue="" name="danificado5" nullable="1" physicalName="danificado5" precision="23" referenceCount="1" scale="0" source-column-ref="COL184" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL433" populated="true" UUID="e521ae3d-8eb7-4101-b2a7-f6884af2d368" autoIncrement="false" defaultValue="" name="danificado6" nullable="1" physicalName="danificado6" precision="20" referenceCount="1" scale="0" source-column-ref="COL185" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL434" populated="true" UUID="afbd5826-3ea7-4d6d-ae77-903bff4b3d37" autoIncrement="false" defaultValue="" name="danificado7" nullable="1" physicalName="danificado7" precision="25" referenceCount="1" scale="0" source-column-ref="COL186" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL435" populated="true" UUID="0bd402a0-6ea4-4087-8cac-6bd05804c797" autoIncrement="false" defaultValue="" name="danificado8" nullable="1" physicalName="danificado8" precision="25" referenceCount="1" scale="0" source-column-ref="COL187" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL436" populated="true" UUID="b3ef7698-51ff-4dd5-a45d-e071f65d884d" autoIncrement="false" defaultValue="" name="danificado9" nullable="1" physicalName="danificado9" precision="25" referenceCount="1" scale="0" source-column-ref="COL188" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL437" populated="true" UUID="b3e2d7fc-69bd-4cec-8c7d-29874e84fa01" autoIncrement="false" defaultValue="" name="danificado10" nullable="1" physicalName="danificado10" precision="25" referenceCount="1" scale="0" source-column-ref="COL189" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL438" populated="true" UUID="06d40971-4dc5-4d24-bb23-cc53ecea62f5" autoIncrement="false" defaultValue="" name="danificado11" nullable="1" physicalName="danificado11" precision="25" referenceCount="1" scale="0" source-column-ref="COL190" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL439" populated="true" UUID="b4902963-f9de-40c0-a7f0-808073cd52ee" autoIncrement="false" defaultValue="" name="outrafasevoo" nullable="1" physicalName="outrafasevoo" precision="25" referenceCount="1" scale="0" source-column-ref="COL191" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL440" populated="true" UUID="a93adc1e-811d-4f8a-9b78-cc14c91496c6" autoIncrement="false" defaultValue="" name="ingestao_motor" nullable="1" physicalName="ingestao_motor" precision="25" referenceCount="1" scale="0" source-column-ref="COL192" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL441" populated="true" UUID="0dfa0864-0b4c-413e-80aa-62aa0070d27c" autoIncrement="false" defaultValue="" name="ingestao_multipla" nullable="1" physicalName="ingestao_multipla" precision="25" referenceCount="1" scale="0" source-column-ref="COL193" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL442" populated="true" UUID="dfd80587-3ef7-4bae-92a3-5b80a0a8fc92" autoIncrement="false" defaultValue="" name="parte_da_aeronave" nullable="1" physicalName="parte_da_aeronave" precision="350" referenceCount="1" scale="0" source-column-ref="COL194" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL443" populated="true" UUID="1cb71728-254d-4c96-a018-f2ca84337a77" autoIncrement="false" defaultValue="" name="outraanvparte" nullable="1" physicalName="outraanvparte" precision="25" referenceCount="1" scale="0" source-column-ref="COL195" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL444" populated="true" UUID="a6b74ee4-36c1-4612-b4e8-b5a97e64013a" autoIncrement="false" defaultValue="" name="coletada" nullable="1" physicalName="coletada" precision="23" referenceCount="1" scale="0" source-column-ref="COL196" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL445" populated="true" UUID="de1cbee0-09b6-4b44-82b4-10a8704f3a5c" autoIncrement="false" defaultValue="" name="fotografada" nullable="1" physicalName="fotografada" precision="26" referenceCount="1" scale="0" source-column-ref="COL197" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL446" populated="true" UUID="d7994a81-f5f8-439e-9fc9-782e055ca4a0" autoIncrement="false" defaultValue="" name="enviada" nullable="1" physicalName="enviada" precision="29" referenceCount="1" scale="0" source-column-ref="COL198" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL447" populated="true" UUID="42d5348f-8c43-45be-a683-12baf7a3df65" autoIncrement="false" defaultValue="" name="amostra" nullable="1" physicalName="amostra" precision="25" referenceCount="1" scale="0" source-column-ref="COL199" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL448" populated="true" UUID="cca409fb-9e5c-4439-b339-ecee02f940af" autoIncrement="false" defaultValue="" name="avistada" nullable="1" physicalName="avistada" precision="11" referenceCount="1" scale="0" source-column-ref="COL200" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL449" populated="true" UUID="7f3c9529-e548-4ac7-a0aa-b5c8fef1e865" autoIncrement="false" defaultValue="" name="atingida" nullable="1" physicalName="atingida" precision="27" referenceCount="1" scale="0" source-column-ref="COL201" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL450" populated="true" UUID="26c47d98-5632-4580-8462-34c24f937946" autoIncrement="false" defaultValue="" name="tamanho_sugerido" nullable="1" physicalName="tamanho_sugerido" precision="10" referenceCount="1" scale="0" source-column-ref="COL202" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL451" populated="true" UUID="8398031a-d479-438a-8911-f73d2c3bdc3e" autoIncrement="false" defaultValue="" name="fator_nome" nullable="1" physicalName="fator_nome" precision="53" referenceCount="1" scale="0" source-column-ref="COL203" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL452" populated="true" UUID="f7154df7-87e6-440e-a2c8-a2feb60cd7f9" autoIncrement="false" defaultValue="" name="fator_aspecto" nullable="1" physicalName="fator_aspecto" precision="46" referenceCount="1" scale="0" source-column-ref="COL204" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL453" populated="true" UUID="af5f9395-d6ad-4f77-95c3-08b7bfddb00c" autoIncrement="false" defaultValue="" name="fator_condicionante" nullable="1" physicalName="fator_condicionante" precision="42" referenceCount="1" scale="0" source-column-ref="COL205" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL454" populated="true" UUID="0867e84d-c71b-4239-949a-49c77ad6e41e" autoIncrement="false" defaultValue="" name="fator_area" nullable="1" physicalName="fator_area" precision="17" referenceCount="1" scale="0" source-column-ref="COL206" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB3803" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB3802" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB3804" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX455" populated="true" UUID="7592edfb-74e5-457b-a1b4-9a9ef5282f22" clustered="false" name="dim_ocorrencia_aeronave_pk" physicalName="dim_ocorrencia_aeronave_pk" primaryKeyIndex="true" unique="false" >
+    </index>
+    <index id="IDX456" populated="true" UUID="1ce29743-c637-4834-8c01-3fcd173fd4f4" clustered="false" name="idx_dim_ocorrencia_aeronave_lookup" physicalName="idx_dim_ocorrencia_aeronave_lookup" primaryKeyIndex="false" unique="false" >
+     <index-column id="IDC457" populated="true" UUID="8eda8931-7b74-47b3-b343-0983ad2a3020" ascendingOrDescending="ASCENDING" column-ref="COL385" name="codigo_ocorrencia1" physicalName="codigo_ocorrencia1" />
+    </index>
+    <index id="IDX458" populated="true" UUID="63151b34-4905-4efe-9987-d92c0d913f2c" clustered="false" name="idx_dim_ocorrencia_aeronave_tk" physicalName="idx_dim_ocorrencia_aeronave_tk" primaryKeyIndex="false" unique="false" >
+     <index-column id="IDC459" populated="true" UUID="528ffb61-781a-4759-9f8e-9c59d94bebc7" ascendingOrDescending="ASCENDING" column-ref="COL381" name="i_dim_ocorrencia_aeronave_sk" physicalName="i_dim_ocorrencia_aeronave_sk" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB460" populated="true" UUID="88e9eb5a-a072-4eec-bfe6-b61365ffa830" name="dim_time" objectType="TABLE" physicalName="dim_time" >
+   <remarks></remarks>
+   <folder id="FOLTAB4601" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL461" populated="true" UUID="e574a2ce-1822-4d9b-8c27-b610720a8a0d" autoIncrement="false" defaultValue="" name="s_hora" nullable="1" physicalName="s_hora" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL213" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL462" populated="true" UUID="8d84d6ad-056a-4b4b-8d5c-3a1cae1356fa" autoIncrement="false" defaultValue="" name="s_minuto" nullable="1" physicalName="s_minuto" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL214" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL463" populated="true" UUID="9e2fcb31-07e5-444d-872e-764b784e9fa1" autoIncrement="false" defaultValue="" name="i_hora" nullable="1" physicalName="i_hora" precision="0" referenceCount="1" scale="0" source-column-ref="COL215" sourceDataTypeName="float8" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
+     <remarks></remarks>
+    </column>
+    <column id="COL464" populated="true" UUID="fb963663-fdf5-490c-8991-ef5895170a6c" autoIncrement="false" defaultValue="" name="i_minuto" nullable="1" physicalName="i_minuto" precision="0" referenceCount="1" scale="0" source-column-ref="COL216" sourceDataTypeName="float8" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
+     <remarks></remarks>
+    </column>
+    <column id="COL465" populated="true" UUID="4cbee82d-050c-48a1-9901-43d083da09da" autoIncrement="false" defaultValue="" name="id_time_sk" nullable="1" physicalName="id_time_sk" precision="2147483647" referenceCount="1" scale="0" source-column-ref="COL217" sourceDataTypeName="text" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL466" populated="true" UUID="ad9f687b-7957-4dd4-be76-03023295d922" autoIncrement="false" defaultValue="" name="id_time_integer_sk" nullable="1" physicalName="id_time_integer_sk" precision="0" referenceCount="1" scale="0" source-column-ref="COL218" sourceDataTypeName="float8" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB4603" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB4602" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB4604" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX467" populated="true" UUID="665239b8-2776-4722-aa60-e10c69b986a5" clustered="false" name="dim_time_pk" physicalName="dim_time_pk" primaryKeyIndex="true" unique="false" >
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL468" populated="true" UUID="b72eedd1-0016-4c61-84e9-293c1368b577" deferrability="7" deleteRule="3" fk-table-ref="TAB237" fkCardinality="7" identifying="false" name="dim_aeronave_fato_ocorrencia_fk" physicalName="dim_aeronave_fato_ocorrencia_fk" pk-table-ref="TAB252" pkCardinality="2" updateRule="3" >
+   </relationship>
+   <relationship id="REL469" populated="true" UUID="f2bef727-7206-47c0-8080-8cf682abe8ec" deferrability="7" deleteRule="3" fk-table-ref="TAB237" fkCardinality="7" identifying="false" name="dim_data_fato_ocorrencia_fk" physicalName="dim_data_fato_ocorrencia_fk" pk-table-ref="TAB291" pkCardinality="2" updateRule="3" >
+   </relationship>
+   <relationship id="REL470" populated="true" UUID="16b0b84c-2224-4883-9e2d-a5b20450cab8" deferrability="7" deleteRule="3" fk-table-ref="TAB237" fkCardinality="7" identifying="false" name="dim_especie_fato_ocorrencia_fk" physicalName="dim_especie_fato_ocorrencia_fk" pk-table-ref="TAB330" pkCardinality="2" updateRule="3" >
+   </relationship>
+   <relationship id="REL471" populated="true" UUID="c77f3865-bae9-4382-8cfb-e561103b1aba" deferrability="7" deleteRule="3" fk-table-ref="TAB237" fkCardinality="7" identifying="false" name="dim_junk_aeronave_ocorrencia_fato_ocorrencia_fk" physicalName="dim_junk_aeronave_ocorrencia_fato_ocorrencia_fk" pk-table-ref="TAB342" pkCardinality="2" updateRule="3" >
+   </relationship>
+   <relationship id="REL472" populated="true" UUID="71a14200-c919-4827-a45c-e97c748076f1" deferrability="7" deleteRule="3" fk-table-ref="TAB237" fkCardinality="7" identifying="false" name="dim_localidade_fato_ocorrencia_fk" physicalName="dim_localidade_fato_ocorrencia_fk" pk-table-ref="TAB362" pkCardinality="2" updateRule="3" >
+   </relationship>
+   <relationship id="REL473" populated="true" UUID="ae8efc36-9711-4eb6-8b78-704362514f3f" deferrability="7" deleteRule="3" fk-table-ref="TAB237" fkCardinality="7" identifying="false" name="dim_ocorrencia_aeronave_fato_ocorrencia_fk" physicalName="dim_ocorrencia_aeronave_fato_ocorrencia_fk" pk-table-ref="TAB380" pkCardinality="2" updateRule="3" >
+   </relationship>
+   <relationship id="REL474" populated="true" UUID="1fdb3a14-e3ea-44fb-a222-e2c7db2cb48e" deferrability="7" deleteRule="3" fk-table-ref="TAB237" fkCardinality="7" identifying="false" name="dim_time_fato_ocorrencia_fk" physicalName="dim_time_fato_ocorrencia_fk" pk-table-ref="TAB460" pkCardinality="2" updateRule="3" >
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB237" x="682" y="202" bgColor="0xc8b7ea" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB252" x="285" y="307" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB291" x="878" y="508" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB330" x="604" y="20" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB342" x="225" y="105" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB362" x="912" y="37" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB380" x="1173" y="220" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB460" x="636" y="544" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL473" pkConnection="0.3802469135802469" fkConnection="0.9581589958158996" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL469" pkConnection="0.035842293906810034" fkConnection="0.7208333333333333" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL472" pkConnection="0.1956521739130435" fkConnection="1.0" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="20"/>
+  <table-link relationship-ref="REL470" pkConnection="0.6018099547511312" fkConnection="0.31666666666666665" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL471" pkConnection="0.8616352201257862" fkConnection="0.3305439330543933" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL468" pkConnection="0.3363148479427549" fkConnection="0.8451882845188284" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL474" pkConnection="0.5619047619047619" fkConnection="0.39166666666666666" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>
